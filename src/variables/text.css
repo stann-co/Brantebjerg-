@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "alumni";
+  src: url(../data/fonts_bb/AlumniSansPinstripe-Regular.woff);
+}
+@font-face {
+  font-family: "chathura";
+  src: url(../data/fonts_bb/Chathura-Regular.woff);
+}
+@font-face {
+  font-family: "chenla";
+  src: url(../data/fonts_bb/Chenla-Regular.woff);
+}
+
+:root {
+  /* typefaces */
+  --h1-typeface: "alumni", sans-serif;
+  --h2-typeface: "chathura", sans-serif;
+  --h3-typeface: "chathura", sans-serif;
+  --h4-typeface: "chathura", sans-serif;
+  --p-typeface: "chenla", sans-serif;
+
+  /* font sizes */
+  --h1-size: 64px;
+  --h2-size: 48px;
+  --h3-size: 36px;
+  --h4-size: 32px;
+  --p-size: 12px;
+
+  /* text color */
+  --h1-color: black;
+  --h2-color: black;
+  --h3-color: black;
+  --h4-color: black;
+  --p-color: black;
+}
