@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/images/hero-kunsthal.png";
+---
+
+<Layout title="Kunsthal">
+  <!-- HERO -->
+  <section class="hero">
+    <header class="nav">
+      <a href="/" class="logo">brantebjerg</a>
+
+      <div class="nav-right">
+        <a href="/kunsthal">
+          <img src="/icons/kunsthal.svg" alt="Kunsthal" />
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="/bureau">
+          <img src="/icons/bureau.svg" alt="Bureau" />
+        </a>
+
+        <a class="booking-btn" href="/booking"> Booking </a>
+      </div>
+    </header>
+
+    <img src={heroImage.src} alt="BB Kunsthal" class="hero-image" />
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1>BB Kunsthal</h1>
+    </div>
+  </section>
+
+  <!-- GALLERI -->
+
+  <section class="kunsthal-section art-bg">
+    <div class="two-column">
+      <div class="text-box">
+        <h2>Om Galleri</h2>
+
+        <h3>Et levende kunstmiljø</h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium natus nihil sapiente expedita fuga, quia culpa amet beatae! Nemo dolores rerum similique. Laborum, assumenda ipsum vitae reiciendis similique quidem.</p>
+
+        <a class="cta-btn" href="/kunsthal-galleri"> Til galleri → </a>
+      </div>
+
+      <div>
+        <img src="/images/gallery.png" alt="Galleri" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MAD -->
+
+  <section class="kunsthal-section food-bg">
+    <div class="two-column">
+      <div>
+        <img src="/images/food.png" alt="Mad" />
+      </div>
+
+      <div class="text-box">
+        <h2>Mad & Oplevelser</h2>
+
+        <h3>Om</h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium natus nihil sapiente expedita fuga, quia culpa amet beatae! Nemo dolores rerum similique. Laborum, assumenda ipsum vitae reiciendis similique quidem.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+
+  <section class="kunsthal-section menu-bg no-border">
+    <div class="two-column">
+      <div class="text-box">
+        <h2>Menu</h2>
+
+        <ul>
+          <li>Kaffe</li>
+          <li>Kage</li>
+          <li>Sandwich</li>
+          <li>Vegetarisk</li>
+          <li>Kolde drikke</li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="/images/menu.png" alt="Menu" />
+      </div>
+    </div>
+  </section>
+
+  <!-- OPHOLD -->
+
+  <section class="kunsthal-section stay-bg">
+    <div class="two-column">
+      <div>
+        <img src="/images/stay.png" alt="Ophold" />
+      </div>
+
+      <div class="text-box">
+        <h2>Ophold</h2>
+
+        <h3>Bo midt i oplevelsen</h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium natus nihil sapiente expedita fuga, quia culpa amet beatae! Nemo dolores rerum similique. Laborum, assumenda ipsum vitae reiciendis similique quidem.</p>
+
+        <a class="cta-btn" href="/booking"> Til booking → </a>
+      </div>
+    </div>
+  </section>
+</Layout>

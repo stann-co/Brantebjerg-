@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import heroImage from "../assets/images/bureau-hero.png";
+---
+
+<Layout title="Bureau">
+  <section class="hero">
+    <header class="nav">
+      <a href="/" class="logo">brantebjerg</a>
+
+      <div class="nav-right">
+        <a href="/kunsthal">
+          <img src="/icons/kunsthal.svg" alt="Kunsthal" />
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="/bureau">
+          <img src="/icons/bureau.svg" alt="Bureau" />
+        </a>
+
+        <a class="booking-btn" href="/booking"> Booking </a>
+      </div>
+    </header>
+
+    <img src={heroImage.src} class="hero-image" />
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content bureau-title">
+      <h1>Bureau</h1>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="bureau-section about-bg">
+    <div class="two-column">
+      <div class="text-box">
+        <h2>About Brantebjerg Bureau</h2>
+
+        <h3>Something something</h3>
+
+        <p>Brantebjerg Bureau skaber kreative projekter, kunstoplevelser og fortællinger.</p>
+
+        <p>Et sted hvor kreativitet møder mennesker, oplevelser og kunst.</p>
+
+        <a class="cta-btn" href="/bureau-galleri"> Til galleri → </a>
+      </div>
+
+      <div>
+        <img src="/images/kunst.png" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NEDERSTE SEKTION -->
+
+  <section class="bureau-section wall-bg">
+    <div class="two-column reverse">
+      <div>
+        <img src="/images/hvid.png" />
+      </div>
+
+      <div class="text-box">
+        <h2>Events</h2>
+
+        <h3>Oplevelser & arrangementer</h3>
+
+        <p>Vi skaber events med fokus på kunst, kultur og fællesskab.</p>
+
+        <p>Udstillinger, workshops og særlige oplevelser samlet ét sted.</p>
+
+        <a class="cta-btn"> Til kalender → </a>
+      </div>
+    </div>
+  </section>
+</Layout>

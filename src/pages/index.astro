@@ -1,10 +1,72 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import pawelImage from "../assets/images/pawel-pernille.png";
+import heroVideo from "../assets/video/MVI_9007.mp4";
 ---
 
-<Layout> inde i layoutet </Layout>
+<Layout title="Brantebjerg">
+  <section class="hero">
+    <header class="nav">
+      <a href="/" class="logo"> brantebjerg </a>
 
-<!-- Forsiden skal skabe stemning og fange opmærksomhed med det samme. Brug store billeder eller video og meget kort tekst. Vis små previews af oplevelser, så man hurtigt får en fornemmelse af stedet. Formålet er at gøre brugeren nysgerrig og få dem til at klikke videre. -->
+      <div class="nav-right">
+        <a href="/kunsthal">
+          <img src="/icons/kunsthal.svg" alt="Kunsthal" />
+        </a>
+        <div class="separator"></div>
+
+        <a href="/bureau">
+          <img src="/icons/bureau.svg" alt="Bureau" />
+        </a>
+
+        <a href="/booking" class="booking-btn"> Booking </a>
+      </div>
+    </header>
+
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src={heroVideo} type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1>Brantebjerg</h1>
+
+      <p>Et kreativt kunstmiljø</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-grid">
+      <div class="left-box">
+        <h3>Om os</h3>
+
+        <h2>
+          Pawel & Pernelle -<br />
+          Menneskene bag Brantebjerg
+        </h2>
+
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+          looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable sourceContrary to popular belief, Lorem Ipsum is not simply
+          random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+          consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable sourceContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+          classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+          going through the cites of the word in classical literature, discovered the undoubtable sourceContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it
+          over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+          literature, discovered the undoubtable source
+        </p>
+      </div>
+
+      <div class="right-box">
+        <img src={pawelImage.src} alt="Pawel og Pernille" />
+
+        <div class="quote">
+          <p>"In 1979 a couple of refugees arrived by foot to this place. They decided to open a gallery and present to the local environment a little piece of their homeland. They were my mom and dad."</p>
+
+          <span> Pawel Dawid Wedrowski </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

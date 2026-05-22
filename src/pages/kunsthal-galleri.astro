@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const artworks = [
+  {
+    artist: "NADIA PLESNER",
+    image: "/images/gallery1.png",
+    category: "Maleri",
+    price: 2500,
+  },
+  {
+    artist: "FARANAK SOHI",
+    image: "/images/gallery2.png",
+    category: "Skulptur",
+    price: 3400,
+  },
+  {
+    artist: "PERNELLE CASPERSEN",
+    image: "/images/gallery3.png",
+    category: "Foto",
+    price: 5000,
+  },
+  {
+    artist: "SUNDAYS",
+    image: "/images/gallery4.png",
+    category: "Maleri",
+    price: 2800,
+  },
+  {
+    artist: "NADIA PLESNER",
+    image: "/images/gallery5.png",
+    category: "Foto",
+    price: 2100,
+  },
+  {
+    artist: "PERNELLE CASPERSEN",
+    image: "/images/gallery6.png",
+    category: "Skulptur",
+    price: 7000,
+  },
+  {
+    artist: "SUNDAYS",
+    image: "/images/gallery7.png",
+    category: "Maleri",
+    price: 1600,
+  },
+  {
+    artist: "SUNDAYS",
+    image: "/images/gallery8.png",
+    category: "Foto",
+    price: 3200,
+  },
+  {
+    artist: "NADIA PLESNER",
+    image: "/images/gallery9.png",
+    category: "Skulptur",
+    price: 4500,
+  },
+];
+---
+
+<Layout title="Galleri">
+  <!-- Header -->
+
+  <header class="nav">
+    <a href="/" class="logo"> brantebjerg </a>
+
+    <div class="nav-right">
+      <a href="/kunsthal">
+        <img src="/icons/kunsthal.svg" alt="Kunsthal" />
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="/bureau">
+        <img src="/icons/bureau.svg" alt="Bureau" />
+      </a>
+
+      <a href="/booking" class="booking-btn"> Booking </a>
+    </div>
+  </header>
+
+  <!-- Gallery Hero -->
+
+  <section class="gallery-hero">
+    <div class="gallery-title">
+      <h1>Gallery</h1>
+    </div>
+  </section>
+
+  <!-- Galleri -->
+
+  <section class="gallery-section">
+    <div class="gallery-controls">
+      <select class="gallery-filter">
+        <option>Filter</option>
+        <option>Maleri</option>
+        <option>Foto</option>
+        <option>Skulptur</option>
+        <option>0–2500 kr</option>
+        <option>2500–5000 kr</option>
+        <option>5000+ kr</option>
+      </select>
+    </div>
+
+    <div class="gallery-grid">
+      {
+        artworks.map((art) => (
+          <article class="art-card">
+            <img src={art.image} alt={art.artist} />
+
+            <div class="art-label">{art.artist}</div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

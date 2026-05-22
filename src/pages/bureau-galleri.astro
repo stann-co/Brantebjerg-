@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+  { title: "Projekt 1", image: "/images/gallery1.png" },
+  { title: "Projekt 2", image: "/images/gallery2.png" },
+  { title: "Projekt 3", image: "/images/gallery3.png" },
+  { title: "Projekt 4", image: "/images/gallery4.png" },
+  { title: "Projekt 5", image: "/images/gallery5.png" },
+  { title: "Projekt 6", image: "/images/gallery6.png" },
+  { title: "Projekt 7", image: "/images/gallery7.png" },
+  { title: "Projekt 8", image: "/images/gallery8.png" },
+  { title: "Projekt 9", image: "/images/gallery9.png" },
+];
+---
+
+<Layout title="Bureau Gallery">
+  <header class="nav">
+    <a href="/" class="logo"> brantebjerg </a>
+
+    <div class="nav-right">
+      <a href="/kunsthal">
+        <img src="/icons/kunsthal.svg" alt="" />
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="/bureau">
+        <img src="/icons/bureau.svg" alt="" />
+      </a>
+
+      <a href="/booking" class="booking-btn"> Kalender </a>
+    </div>
+  </header>
+
+  <section class="bureau-gallery-hero">
+    <div class="bureau-hero-content">
+      <h1 class="bureau-title">
+        Galleri <span>b</span>
+      </h1>
+
+      <div class="sneak-circle">
+        <img class="burger-preview" src="/images/burger.png" alt="" />
+      </div>
+
+      <h3>Sneak Peek section</h3>
+
+      <p>Since we are always updating the contents of our gallery at Brantebjerg Bureau.</p>
+
+      <a href="#gallery" class="gallery-btn"> To Gallery → </a>
+    </div>
+  </section>
+
+  <div class="green-divider"></div>
+
+  <section id="gallery" class="bureau-gallery-section">
+    <div class="gallery-top">
+      <select class="gallery-filter">
+        <option>Filter</option>
+        <option>Photo</option>
+        <option>Project</option>
+        <option>Design</option>
+      </select>
+    </div>
+
+    <div class="gallery-grid">
+      {
+        projects.map((project) => (
+          <article class="bureau-card">
+            <img src={project.image} alt={project.title} />
+
+            <div class="bureau-label">{project.title}</div>
+          </article>
+        ))
+      }
+    </div>
+
+    <button class="expand-btn"> Expand Gallery </button>
+  </section>
+
+  <script is:inline>
+    window.onload = () => {
+      const burger = document.querySelector(".burger-preview");
+      const hero = document.querySelector(".bureau-gallery-hero");
+
+      hero.addEventListener("mousemove", (e) => {
+        const rect = hero.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const x = (e.clientX - centerX) / 15;
+        const y = (e.clientY - centerY) / 15;
+
+        burger.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+      });
+
+      hero.addEventListener("mouseleave", () => {
+        burger.style.transition = "transform 0.4s ease";
+        burger.style.transform = "translate(-50%, -50%)";
+      });
+
+      hero.addEventListener("mouseenter", () => {
+        burger.style.transition = "none";
+      });
+    };
+  </script>
+</Layout>

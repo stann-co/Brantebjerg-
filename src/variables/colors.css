@@ -77,4 +77,7 @@
   --tertiary2-700: #676c34;
   --tertiary2-800: #545a1e;
   --tertiary2-900: #474d10;
+
+  /* card colors */
+  --card_color_1: #65754d transparent 75%;
 }

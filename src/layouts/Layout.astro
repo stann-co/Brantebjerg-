@@ -1,16 +1,29 @@
+---
+import Footer from "../components/ui/footer.astro";
+
+import "../styles/home.css";
+import "../variables/text.css";
+import "../variables/colors.css";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+
+    <title>Brantebjerg</title>
   </head>
+
   <body>
-    <!-- layout er lidt ligesom en kæmpe komponent, men til hele siden, vi kan bruge den til standard header og footer osv på alle sider (eller mange af siderne) -->
     <slot />
+
+    <Footer />
   </body>
 </html>
 
@@ -18,6 +31,7 @@
   html,
   body {
     margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
   }

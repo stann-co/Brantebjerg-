@@ -1,0 +1,21 @@
+h1 {
+  font-family: var(--h1-typeface);
+  font-size: var(--h1-size);
+  color: var(--h1-color);
+}
+
+h2 {
+  font-family: var(--h2-typeface);
+  font-size: var(--h2-size);
+  color: var(--h2-color);
+}
+
+h3 {
+  font-family: var(--h3-typeface);
+  font-size: var(--h3-size);
+}
+
+p {
+  font-family: var(--p-typeface);
+  font-size: var(--p-size);
+}
