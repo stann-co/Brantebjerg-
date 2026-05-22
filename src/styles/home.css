@@ -30,8 +30,6 @@ body {
 
 /* NAVIGATION */
 
-/* NAVIGATION */
-
 .nav {
   position: absolute;
 
@@ -111,6 +109,20 @@ body {
   background: white;
 
   color: black;
+}
+header.nav a img.logo {
+  width: 80px;
+  max-height: 60px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  header.nav a img.logo {
+    width: 120px;
+    max-height: 80px;
+  }
 }
 
 /* MOBILE */

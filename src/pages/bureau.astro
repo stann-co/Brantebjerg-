@@ -4,10 +4,12 @@ import Layout from "../layouts/Layout.astro";
 import heroImage from "/public/images/bureau-hero.webp";
 ---
 
-<Layout title="Bureau">
+<Layout title="Brantebjerg">
   <section class="hero">
     <header class="nav">
-      <a href="/" class="logo">brantebjerg</a>
+      <a href="/" aria-label="Gå til forsiden">
+        <img src="/icons/logo.jpg" alt="Brantebjerg" class="logo" />
+      </a>
 
       <div class="nav-right">
         <a href="/kunsthal">
