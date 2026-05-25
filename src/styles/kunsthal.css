@@ -1,0 +1,134 @@
+/* KUNSTHAL */
+
+.kunsthal-section {
+  padding: 100px 80px;
+
+  background: #ececec;
+}
+
+.kunsthal-section img {
+  width: 100%;
+
+  height: 550px;
+
+  object-fit: cover;
+}
+
+
+.kunsthal-section {
+  padding: 100px 80px;
+
+  border-top: 10px solid #65754d;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.art-bg {
+  background-image: url("/images/art-bg.png");
+}
+
+.food-bg {
+  background-image: url("/images/food-bg.png");
+}
+
+.stay-bg {
+  background-image: url("/images/stay-bg.png");
+}
+
+.two-column {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.two-column img {
+  width: 100%;
+
+  height: 600px;
+
+  object-fit: cover;
+}
+
+.food-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+}
+
+.food-grid img {
+  width: 100%;
+
+  margin-top: 30px;
+}
+
+.text-content {
+  max-width: 500px;
+}
+
+.text-content h2 {
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+.menu-box {
+  margin-top: 30px;
+}
+
+.menu-box p {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+  .two-column,
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kunsthal-section {
+    padding: 40px 30px;
+  }
+}
+.kunsthal-section {
+  padding: 100px 80px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-top: 8px solid #65754d;
+}
+
+.art-bg {
+  background-image: url("/public/images/texture-art.png");
+}
+
+.food-bg {
+  background-image: url("/public/images/texture-food.png");
+}
+
+.menu-bg {
+  background-image: url("/public/images/texture-food.png");
+}
+
+.stay-bg {
+  background-image: url("/public/images/texture-stay.png");
+}
+.no-border {
+  border-top: none;
+}
