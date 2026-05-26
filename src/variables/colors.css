@@ -79,5 +79,13 @@
   --tertiary2-900: #474d10;
 
   /* card colors */
-  --card_color_1: #65754d transparent 75%;
+  --card_color_index: #65754dbf;
+  --card_color_events: var(--card_color_index);
+
+  --card_color_bureau: #E9B08B80;
+  --card_color_bureau-galleri: var(--card_color_bureau);
+  
+  --card_color_kunsthal: #2B354880;
+  --card_color_kunsthal-galleri: var(--card_color_kunsthal);
+  
 }
