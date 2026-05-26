@@ -5,85 +5,79 @@ import heroImage from "/public/images/hero-kunsthal.webp";
 import "../styles/kunsthal.css";
 ---
 
-<Layout title="Brantebjerg">
-  <section class="hero">
-    <!-- HERO BILLEDE -->
-    <img src="/images/hero-kunsthal.webp" alt="BB Kunsthal" class="hero-image" />
+<Layout title="Brantebjerg Kunsthal">
+  <!-- HERO -->
 
+  <section class="kunsthal-hero">
     <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-      <h1>BB Kunsthal</h1>
+    <div class="kunsthal-content">
+      <h1>
+        Brantebjerg <br />
+        Kunsthal
+      </h1>
 
-      <p>Et levende kreativt kunstmiljø</p>
+      <p>Nakke Nord 65, 4500</p>
     </div>
   </section>
 
-  <!-- GALLERI -->
+  <!-- ART -->
+
   <section class="kunsthal-section art-bg">
-    <div class="two-column">
-      <div class="text-box">
-        <h2>Om Galleri</h2>
+    <div class="section-grid">
+      <div class="section-text">
+        <h2>Art Collection</h2>
 
-        <h3>Et levende kunstmiljø</h3>
+        <p>See the sprawling art exhibited in Brantebjerg Kunsthals raw architecture</p>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-        <a class="cta-btn" href="/kunsthal-galleri"> Til galleri → </a>
+        <a href="/kunsthal-galleri"> Kunsthal Gallery → </a>
       </div>
 
-      <div></div>
+      <div>
+        <img src="/images/gallery.webp" alt="" />
+      </div>
     </div>
   </section>
 
-  <!-- MAD -->
+  <!-- FOOD -->
+
   <section class="kunsthal-section food-bg">
-    <div class="two-column">
-      <div></div>
+    <div class="section-grid">
+      <div>
+        <img src="/images/food.webp" alt="" />
+      </div>
 
-      <div class="text-box">
-        <h2>Mad & Oplevelser</h2>
+      <div class="section-text">
+        <h2>Food</h2>
 
-        <h3>Om</h3>
+        <h3>Enjoy a meal.</h3>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Besides the art and surroundings, Brantebjerg also offers food and drinks.</p>
+
+        <p>Enjoy local ingredients and seasonal produce.</p>
+
+        <a href="#"> Menu popup → </a>
       </div>
     </div>
   </section>
 
-  <!-- MENU -->
-  <section class="kunsthal-section menu-bg">
-    <div class="two-column">
-      <div class="text-box">
-        <h2>Menu</h2>
+  <!-- STAY -->
 
-        <ul>
-          <li>Kaffe</li>
-          <li>Kage</li>
-          <li>Sandwich</li>
-          <li>Vegetarisk</li>
-          <li>Kolde drikke</li>
-        </ul>
-      </div>
-
-      <div></div>
-    </div>
-  </section>
-
-  <!-- OPHOLD -->
   <section class="kunsthal-section stay-bg">
-    <div class="two-column">
-      <div></div>
+    <div class="section-grid">
+      <div>
+        <img src="/images/stay.webp" alt="" />
+      </div>
 
-      <div class="text-box">
-        <h2>Ophold</h2>
+      <div class="section-text">
+        <h2>Accommodations</h2>
 
-        <h3>Bo midt i oplevelsen</h3>
+        <h3>Come and stay</h3>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>If you can't get enough of Brantebjerg, you can book a stay in the guest house.</p>
 
-        <a class="cta-btn" href="/booking"> Til booking → </a>
+        <p>Contact: pernellecaspersen@yahoo.dk</p>
       </div>
     </div>
-  </section></Layout
->
+  </section>
+</Layout>
