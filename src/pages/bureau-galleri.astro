@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/bureau-galleri.css";
+import { getGallery } from "../api/supabase";
+
+type Artwork = {
+  artist: string;
+  picture: string;
+  place?: string;
+};
+
+const artworks: Artwork[] = await getGallery();
+
+const bureauArt = artworks.filter((art) => art.place?.toLowerCase() === "brantebjerg bureau");
+---
+
+<Layout title="Galleri b">
+  <section class="gallery-hero">
+    <div class="hero-overlay"></div>
+
+    <div class="gallery-title">
+      <h1>
+        Galleri <span>b</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="gallery-wrapper">
+    <div class="gallery-top">
+      <select class="gallery-filter">
+        <option>Filter</option>
+        <option>Maleri</option>
+        <option>Foto</option>
+        <option>Skulptur</option>
+      </select>
+    </div>
+
+    <div class="gallery-grid">
+      {
+        bureauArt.map((art) => (
+          <article class="gallery-card">
+            <img src={art.picture} alt={art.artist} />
+
+            <div class="artist">{art.artist}</div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

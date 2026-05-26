@@ -1,81 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImage from "/public/images/bureau-hero.webp";
-
 import "../styles/bureau.css";
 ---
 
-<Layout title="Brantebjerg">
-  <section class="hero">
-    <header class="nav">
-      <a href="/" aria-label="Gå til forsiden">
-        <img src="/icons/logo.jpg" alt="Brantebjerg" class="logo" />
-      </a>
-
-      <div class="nav-right">
-        <a href="/kunsthal">
-          <img src="/icons/kunsthal.svg" alt="Kunsthal" />
-        </a>
-
-        <div class="separator"></div>
-
-        <a href="/bureau">
-          <img src="/icons/bureau.svg" alt="Bureau" />
-        </a>
-
-        <a class="booking-btn" href="/booking"> Booking </a>
-      </div>
-    </header>
-
-    <img src={heroImage.src} class="hero-image" />
-
+<Layout title="Brantebjerg Bureau">
+  <section class="bureau-hero">
     <div class="hero-overlay"></div>
 
-    <div class="hero-content bureau-title">
-      <h1>Bureau</h1>
+    <div class="bureau-content">
+      <h1>
+        Brantebjerg <br />
+        Bureau
+      </h1>
+
+      <p>Tullinsgade 25, 1618</p>
     </div>
   </section>
 
-  <!-- ABOUT -->
-
-  <section class="bureau-section about-bg">
-    <div class="two-column">
-      <div class="text-box">
+  <section class="bureau-section">
+    <div class="bureau-grid">
+      <div class="paper-box">
         <h2>About Brantebjerg Bureau</h2>
 
-        <h3>Something something</h3>
+        <p>In 2025 Pawel and Pernelle created Brantebjerg Bureau.</p>
 
-        <p>Brantebjerg Bureau skaber kreative projekter, kunstoplevelser og fortællinger.</p>
+        <p>Brantebjerg Bureau er et mere intimt sted end Brantebjerg Kunsthal. Et rum til møder, kunst og kreative oplevelser.</p>
 
-        <p>Et sted hvor kreativitet møder mennesker, oplevelser og kunst.</p>
+        <p>Her samles mennesker omkring kunst, events og nye idéer.</p>
 
-        <a class="cta-btn" href="/bureau-galleri"> Til galleri → </a>
+        <a href="/bureau-galleri"> Explore gallery → </a>
       </div>
 
       <div>
-        <img src="/images/kunst.webp" />
+        <img src="/images/kunst.webp" alt="" />
       </div>
     </div>
   </section>
 
-  <!-- NEDERSTE SEKTION -->
-
-  <section class="bureau-section wall-bg">
-    <div class="two-column reverse">
+  <section class="bureau-section">
+    <div class="bureau-grid">
       <div>
-        <img src="/images/event.webp" />
+        <img src="/images/stemning.webp" alt="" />
       </div>
 
-      <div class="text-box">
-        <h2>Events</h2>
+      <div class="paper-box">
+        <h2>Events at Brantebjerg Bureau</h2>
 
-        <h3>Oplevelser & arrangementer</h3>
+        <p>Brantebjerg Bureau tilbyder også events, udstillinger og kreative oplevelser.</p>
 
-        <p>Vi skaber events med fokus på kunst, kultur og fællesskab.</p>
+        <p>Hvis du ønsker at afholde et arrangement, kontakt os.</p>
 
-        <p>Udstillinger, workshops og særlige oplevelser samlet ét sted.</p>
-
-        <a class="cta-btn"> Til kalender → </a>
+        <a href="/events"> See events → </a>
       </div>
     </div>
   </section>
