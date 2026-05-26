@@ -64,6 +64,7 @@
 
 .food-bg {
   background: url("/images/food2.png");
+  background-repeat: round;
 }
 
 .stay-bg {
