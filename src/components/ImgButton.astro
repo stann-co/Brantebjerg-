@@ -1,0 +1,48 @@
+---
+const {
+  href = '#',
+  imgSrc = '/default-button.png',
+  hoverSrc = '/hover-button.png',
+  alt = 'Button'
+} = Astro.props;
+---
+
+<img-button data-img-src={imgSrc} data-hover-src={hoverSrc}>
+  <a class="astro-button" href={href}>
+    <img src={imgSrc} alt={alt} />
+  </a>
+</img-button>
+
+<style>
+  @media (max-width: 900px) {
+    img {
+	  		height: 35px;
+	  }
+  }
+</style>
+
+<script>
+  class imgButton extends HTMLElement {
+    connectedCallback() {
+      const src_img = this.dataset.imgSrc;
+      const hover_src = this.dataset.hoverSrc;
+
+      const a = this.querySelector('a')!;
+      const img = this.querySelector('img')!;
+
+      a.addEventListener('mouseenter', () => {
+        if (hover_src) {
+          img.src = hover_src;
+        }
+      });
+
+      a.addEventListener('mouseleave', () => {
+        if (src_img) {
+          img.src = src_img;
+        }
+      });
+    }
+  }
+
+  customElements.define('img-button', imgButton);
+</script>

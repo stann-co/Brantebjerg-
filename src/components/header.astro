@@ -1,22 +1,83 @@
+---
+import Footer from "../components/footer.astro";
+import ImgButton from "./ImgButton.astro";
+
+const pathname = Astro.url.pathname;
+
+console.log(pathname);
+
+//see the path to figure out the background color for the page
+const headerClass = pathname === "/" ? "index" :
+  pathname.startsWith("/bureau") ? "bureau" :
+	pathname.startsWith("/bureau-galleri") ? "bureau-galleri" :
+  pathname.startsWith("/kunsthal") ? "kunsthal" :
+	pathname.startsWith("/kunsthal-galleri") ? "kunsthal-galleri" :
+	pathname.startsWith("/events") ? "events" : "";
+
+console.log(headerClass);
+---
+
 <style>
 	@import "../styles/global.css";
+	@import "../variables/colors.css";
+
+	header {
+		width: 100%;
+		padding: 30px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 100;
+
+		&.index {
+			background-color: var(--card_color_index);
+		}
+
+		&.events {
+			background-color: var(--card_color_events);
+		}
+
+		&.bureau {
+			background-color: var(--card_color_bureau);
+		}
+		
+		&.bureau-galleri {
+			background-color: var(--card_color_bureau-galleri);
+		}
+
+		&.kunsthal {
+			background-color: var(--card_color_kunsthal);
+		}
+
+		&.kunsthal-galleri {
+			background-color: var(--card_color_kunsthal-galleri);
+		}
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		gap: 28px;
+	}
+
+	@media (max-width: 900px) {
+		header {
+  	  padding: 25px;
+	  }
+		.nav {
+			gap: 15px;
+		}
+	}
 </style>
 
-<header class="nav">
-	<a href="/" aria-label="Gå til forsiden">
-		<img src="/icons/logo.jpg" alt="Brantebjerg" class="logo" />
-	</a>
+<header class={headerClass}>
+	<ImgButton href="/" imgSrc="/icons/bb_logo.png" hoverSrc="/icons/bb_logo_h.png" alt="gå til forsiden" />
 
-	<div class="nav-right">
-		<a href="/kunsthal">
-			<img src="/icons/kunsthal.svg" alt="Kunsthal" />
-		</a>
-		<div class="separator"></div>
-	
-		<a href="/bureau">
-			<img src="/icons/bureau.svg" alt="Bureau" />
-		</a>
-	
-		<a href="/booking" class="booking-btn"> Booking </a>
+	<div class="nav">		
+		<ImgButton href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn.png" hoverSrc="/icons/nav_kunsthal_btn_h.png" alt="gå til kunsthal brantebjerg" />
+
+		<ImgButton href="/bureau" imgSrc="/icons/nav_bureau_btn.png" hoverSrc="/icons/nav_bureau_btn_h.png" alt="gå til bureau brantebjerg" />
+		
+		<ImgButton href="/events" imgSrc="/icons/nav_events_btn.png" hoverSrc="/icons/nav_events_btn_h.png" alt="gå til events" />
 	</div>
 </header>
