@@ -1,7 +1,7 @@
 .kunsthal-hero {
   height: 100vh;
 
-  background: url("/images/kh3.webp");
+  background: url("/images/hero-kunsthal.webp");
 
   background-size: cover;
   background-position: center;
@@ -14,6 +14,8 @@
   padding-left: 8%;
 
   color: white;
+
+  border-bottom: 15px solid #44506a;
 }
 
 .hero-overlay {
@@ -49,7 +51,7 @@
 .kunsthal-section {
   padding: 100px 8%;
 
-  border-top: 8px solid #44506a;
+  border-top: 8x solid #44506a;
 
   background-size: cover;
 
@@ -60,15 +62,18 @@
 
 .art-bg {
   background: url("/images/art1.png");
+  border-bottom: 15px solid #44506a;
 }
 
 .food-bg {
   background: url("/images/food2.png");
   background-repeat: round;
+  border-bottom: 15px solid #44506a;
 }
 
 .stay-bg {
   background: url("/images/whitebag.webp");
+  border-bottom: 15px solid #44506a;
 }
 
 .section-grid {
