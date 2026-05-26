@@ -1,0 +1,152 @@
+/* HERO */
+
+.gallery-hero {
+  background-image: url("/images/kh-front.png");
+  background-size: cover;
+  background-position: center;
+
+  min-height: 55vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  padding-bottom: 80px;
+
+  position: relative;
+}
+
+.gallery-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+}
+
+.gallery-title {
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-title h1 {
+  background: #1d2740;
+  color: white;
+
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+
+  padding: 30px 140px;
+}
+
+/* GALLERY SECTION */
+
+.gallery-section {
+  background-image: url("/images/whitebag.png");
+
+  background-repeat: repeat;
+
+  background-position: center;
+
+  background-size: cover;
+
+  padding: 90px 8%;
+}
+
+/* FILTER */
+
+.gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-bottom: 60px;
+}
+
+.gallery-filter {
+  background: #1d2740;
+  color: white;
+
+  border: none;
+
+  padding: 12px 30px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+/* GRID */
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 60px;
+}
+
+.art-card {
+  position: relative;
+  overflow: hidden;
+
+  transition: 0.4s;
+}
+
+.art-card:hover {
+  transform: translateY(-10px);
+}
+
+.art-card img {
+  width: 100%;
+
+  aspect-ratio: 1/1;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.art-label {
+  position: absolute;
+
+  bottom: 12px;
+  left: 12px;
+
+  background: #1d2740;
+
+  color: white;
+
+  padding: 6px 10px;
+
+  font-size: 0.75rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .gallery-title h1 {
+    font-size: 3rem;
+    padding: 20px 80px;
+  }
+}
+
+@media (max-width: 650px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-controls {
+    justify-content: center;
+  }
+
+  .gallery-title h1 {
+    font-size: 2rem;
+    padding: 20px 50px;
+  }
+}

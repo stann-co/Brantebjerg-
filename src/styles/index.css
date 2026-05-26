@@ -1,0 +1,112 @@
+/* ABOUT SECTION */
+
+.about {
+  padding: 80px;
+
+  background-image: url("/images/wall-texture.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+
+  align-items: start;
+}
+
+.left-box {
+  background: rgba(101, 117, 77, 0.75);
+
+  padding: 50px;
+}
+
+.quote {
+  background: rgba(101, 117, 77, 0.75);
+
+  padding: 30px;
+
+  color: white;
+}
+
+.left-box h3 {
+  margin-bottom: 30px;
+
+  color: white;
+}
+
+.left-box h2 {
+  color: #e6edaa;
+
+  line-height: 1.1;
+
+  margin-bottom: 30px;
+}
+
+.left-box p {
+  line-height: 1.8;
+
+  color: white;
+}
+
+.right-box {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.right-box img {
+  width: 100%;
+
+  height: 650px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.quote {
+  background: rgba(101, 117, 77, 0.75);
+
+  padding: 30px;
+
+  color: white;
+}
+
+.quote p {
+  font-size: 1.2rem;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+.quote span {
+  font-size: 0.9rem;
+
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .about {
+    padding: 30px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right-box img {
+    height: 400px;
+  }
+
+}

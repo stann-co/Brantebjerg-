@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import "../styles/galleri-common.css";
+
 const artworks = [
   {
     artist: "NADIA PLESNER",
@@ -60,26 +62,6 @@ const artworks = [
 ---
 
 <Layout title="Galleri">
-  <!-- Header -->
-
-  <header class="nav">
-    <a href="/" class="logo"> brantebjerg </a>
-
-    <div class="nav-right">
-      <a href="/kunsthal">
-        <img src="/icons/kunsthal.svg" alt="Kunsthal" />
-      </a>
-
-      <div class="separator"></div>
-
-      <a href="/bureau">
-        <img src="/icons/bureau.svg" alt="Bureau" />
-      </a>
-
-      <a href="/booking" class="booking-btn"> Booking </a>
-    </div>
-  </header>
-
   <!-- Gallery Hero -->
 
   <section class="gallery-hero">
