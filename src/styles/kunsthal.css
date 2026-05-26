@@ -15,7 +15,7 @@
 
   color: white;
 
-  border-bottom: 15px solid #44506a;
+  border-bottom: 15px solid #39475f;
 }
 
 .hero-overlay {
@@ -51,7 +51,7 @@
 .kunsthal-section {
   padding: 100px 8%;
 
-  border-top: 8x solid #44506a;
+  border-top: 8px solid #39475f;
 
   background-size: cover;
 
@@ -62,18 +62,18 @@
 
 .art-bg {
   background: url("/images/art1.png");
-  border-bottom: 15px solid #44506a;
+  border-bottom: 15px solid #39475f;
 }
 
 .food-bg {
   background: url("/images/food2.png");
   background-repeat: round;
-  border-bottom: 15px solid #44506a;
+  border-bottom: 15px solid #39475f;
 }
 
 .stay-bg {
   background: url("/images/whitebag.webp");
-  border-bottom: 15px solid #44506a;
+  border-bottom: 15px solid #39475f;
 }
 
 .section-grid {
