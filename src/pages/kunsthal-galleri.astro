@@ -2,94 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import { getGallery } from "../api/supabase";
 
-<<<<<<< HEAD
 const artworks = await getGallery();
 
 console.log(artworks);
 ---
 
 <Layout title="Galleri">
-  <header class="nav">
-    <a href="/" class="logo"> brantebjerg </a>
-
-    <div class="nav-right">
-      <a href="/kunsthal">
-        <img src="/icons/kunsthal.svg" alt="" />
-      </a>
-
-      <div class="separator"></div>
-
-      <a href="/bureau">
-        <img src="/icons/bureau.svg" alt="" />
-      </a>
-
-      <a href="/booking" class="booking-btn"> Booking </a>
-    </div>
-  </header>
-=======
-import "../styles/galleri-common.css";
-
-const artworks = [
-  {
-    artist: "NADIA PLESNER",
-    image: "/images/gallery1.png",
-    category: "Maleri",
-    price: 2500,
-  },
-  {
-    artist: "FARANAK SOHI",
-    image: "/images/gallery2.png",
-    category: "Skulptur",
-    price: 3400,
-  },
-  {
-    artist: "PERNELLE CASPERSEN",
-    image: "/images/gallery3.png",
-    category: "Foto",
-    price: 5000,
-  },
-  {
-    artist: "SUNDAYS",
-    image: "/images/gallery4.png",
-    category: "Maleri",
-    price: 2800,
-  },
-  {
-    artist: "NADIA PLESNER",
-    image: "/images/gallery5.png",
-    category: "Foto",
-    price: 2100,
-  },
-  {
-    artist: "PERNELLE CASPERSEN",
-    image: "/images/gallery6.png",
-    category: "Skulptur",
-    price: 7000,
-  },
-  {
-    artist: "SUNDAYS",
-    image: "/images/gallery7.png",
-    category: "Maleri",
-    price: 1600,
-  },
-  {
-    artist: "SUNDAYS",
-    image: "/images/gallery8.png",
-    category: "Foto",
-    price: 3200,
-  },
-  {
-    artist: "NADIA PLESNER",
-    image: "/images/gallery9.png",
-    category: "Skulptur",
-    price: 4500,
-  },
-];
----
-
-<Layout title="Galleri">
-  <!-- Gallery Hero -->
->>>>>>> main
 
   <section class="gallery-hero">
     <div class="gallery-title">
@@ -108,7 +26,7 @@ const artworks = [
     </div>
     <div class="gallery-grid">
       {
-        artworks.map((art) => (
+        artworks.map((art : { picture: string; artist: string }) => (
           <article class="art-card">
             <img src={art.picture} alt={art.artist} />
 
