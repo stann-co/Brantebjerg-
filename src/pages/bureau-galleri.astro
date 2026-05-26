@@ -1,46 +1,47 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/kunst-galleri.css";
+import "../styles/bureau-galleri.css";
 import { getGallery } from "../api/supabase";
 
-const artworks = await getGallery();
+type Artwork = {
+  artist: string;
+  picture: string;
+  place?: string;
+};
 
-const kunsthalArt = artworks.filter((item) => item.place && item.place.toLowerCase() === "brantebjerg kunsthal");
+const artworks: Artwork[] = await getGallery();
+
+const bureauArt = artworks.filter((art) => art.place?.toLowerCase() === "brantebjerg bureau");
 ---
 
-<Layout title="Galleri">
-  <!-- HERO -->
-
+<Layout title="Galleri b">
   <section class="gallery-hero">
     <div class="hero-overlay"></div>
 
     <div class="gallery-title">
-      <h1>Gallery</h1>
+      <h1>
+        Galleri <span>b</span>
+      </h1>
     </div>
   </section>
 
-  <!-- GALLERY -->
-
-  <section class="gallery-container">
+  <section class="gallery-wrapper">
     <div class="gallery-top">
       <select class="gallery-filter">
         <option>Filter</option>
-
         <option>Maleri</option>
-
         <option>Foto</option>
-
         <option>Skulptur</option>
       </select>
     </div>
 
     <div class="gallery-grid">
       {
-        kunsthalArt.map((art) => (
-          <article class="art-card">
+        bureauArt.map((art) => (
+          <article class="gallery-card">
             <img src={art.picture} alt={art.artist} />
 
-            <div class="art-label">{art.artist}</div>
+            <div class="artist">{art.artist}</div>
           </article>
         ))
       }

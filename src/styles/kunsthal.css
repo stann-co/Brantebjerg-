@@ -1,42 +1,76 @@
-/* KUNSTHAL */
+.kunsthal-hero {
+  height: 100vh;
 
-.kunsthal-section {
-  padding: 100px 80px;
-
-  background: #ececec;
-}
-
-.kunsthal-section img {
-  width: 100%;
-
-  height: 550px;
-
-  object-fit: cover;
-}
-
-
-.kunsthal-section {
-  padding: 100px 80px;
-
-  border-top: 10px solid #65754d;
+  background: url("/images/kh3.webp");
 
   background-size: cover;
   background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  padding-left: 8%;
+
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.kunsthal-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.kunsthal-content h1 {
+  font-size: 6rem;
+
+  font-weight: 300;
+
+  letter-spacing: 6px;
+
+  line-height: 1.4;
+
+  margin-bottom: 20px;
+}
+
+.kunsthal-content p {
+  font-size: 1.2rem;
+}
+
+.kunsthal-section {
+  padding: 100px 8%;
+
+  border-top: 8px solid #44506a;
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
 }
 
 .art-bg {
-  background-image: url("/images/art-bg.png");
+  background: url("/images/art1.png");
 }
 
 .food-bg {
-  background-image: url("/images/food-bg.png");
+  background: url("/images/food2.png");
 }
 
 .stay-bg {
-  background-image: url("/images/stay-bg.png");
+  background: url("/images/whitebag.webp");
 }
 
-.two-column {
+.section-grid {
   display: grid;
 
   grid-template-columns: 1fr 1fr;
@@ -46,89 +80,56 @@
   align-items: center;
 }
 
-.two-column img {
+.section-text h2 {
+  font-size: 3rem;
+
+  margin-bottom: 20px;
+}
+
+.section-text h3 {
+  margin-bottom: 20px;
+}
+
+.section-text p {
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+
+.section-text a {
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  background: #2f3c57;
+
+  color: white;
+
+  text-decoration: none;
+
+  margin-top: 20px;
+}
+
+.section-grid img {
   width: 100%;
 
-  height: 600px;
+  max-width: 850px;
+
+  height: auto;
+
+  display: block;
+
+  margin: auto;
 
   object-fit: cover;
 }
 
-.food-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 100px;
-}
-
-.food-grid img {
-  width: 100%;
-
-  margin-top: 30px;
-}
-
-.text-content {
-  max-width: 500px;
-}
-
-.text-content h2 {
-  margin-bottom: 20px;
-}
-
-.text-content p {
-  line-height: 1.8;
-
-  margin-bottom: 30px;
-}
-
-.menu-box {
-  margin-top: 30px;
-}
-
-.menu-box p {
-  display: flex;
-
-  justify-content: space-between;
-
-  margin-bottom: 12px;
-}
-
 @media (max-width: 900px) {
-  .two-column,
-  .food-grid {
+  .section-grid {
     grid-template-columns: 1fr;
   }
 
-  .kunsthal-section {
-    padding: 40px 30px;
+  .kunsthal-content h1 {
+    font-size: 4rem;
   }
-}
-.kunsthal-section {
-  padding: 100px 80px;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  border-top: 8px solid #65754d;
-}
-
-.art-bg {
-  background-image: url("/public/images/texture-art.png");
-}
-
-.food-bg {
-  background-image: url("/public/images/texture-food.png");
-}
-
-.menu-bg {
-  background-image: url("/public/images/texture-food.png");
-}
-
-.stay-bg {
-  background-image: url("/public/images/texture-stay.png");
-}
-.no-border {
-  border-top: none;
 }
