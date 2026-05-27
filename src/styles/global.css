@@ -42,53 +42,37 @@ p {
 /* HERO */
 
 .hero {
-  height: 100vh;
   position: relative;
-}
 
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  margin-bottom: -4px; /* jeg ved ikke hvor de 4px kommer fra.... */
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-}
+  .hero-video {
+    width: 100%;
+    object-fit: cover;
+  }
 
-/* HERO CONTENT */
+  .hero-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+  }
 
-.hero-content {
-  position: absolute;
+  /* HERO CONTENT */
 
-  top: 50%;
-  left: 30px;
-  width: 80%;
-  transform: translateY(-50%);
-  z-index: 5;
-  color: white;
-}
+  .hero-content {
+    position: absolute;
 
-.hero-content h1 {
-  font-family: var(--h1-typeface);
+    top: 48%;
+    left: 30px;
+    width: 80%;
+    z-index: 5;
+    color: white;
+  }
 
-  font-size: 5rem;
-
-  font-weight: 300;
-
-  letter-spacing: 10px;
-
-  line-height: 0.9;
-}
-
-.hero-content p {
-  font-family: var(--p-typeface);
-
-  font-size: 1rem;
-
-  margin-top: 20px;
+  .hero-content p {
+    font-family: var(--p-subtitle-typeface);
+    font-size: var(--p-subtitle-size);
+    margin-left: 20px;
+  }
 }
 
 .booking-btn {

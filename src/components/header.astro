@@ -4,8 +4,6 @@ import ImgButton from "./ImgButton.astro";
 
 const pathname = Astro.url.pathname;
 
-console.log(pathname);
-
 //see the path to figure out the background color for the page
 const headerClass = pathname === "/" ? "index" :
   pathname.startsWith("/bureau") ? "bureau" :
@@ -13,8 +11,6 @@ const headerClass = pathname === "/" ? "index" :
   pathname.startsWith("/kunsthal") ? "kunsthal" :
 	pathname.startsWith("/kunsthal-galleri") ? "kunsthal-galleri" :
 	pathname.startsWith("/events") ? "events" : "";
-
-console.log(headerClass);
 ---
 
 <style>
@@ -22,6 +18,9 @@ console.log(headerClass);
 	@import "../variables/colors.css";
 
 	header {
+		position: absolute;
+		top: 0;
+
 		width: 100%;
 		padding: 30px 20px;
 		display: flex;

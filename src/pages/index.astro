@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Divider from "../components/Divider.astro";
 import pawelImage from "/public/images/pawel-pernille.webp";
-import heroVideo from "/public/video/MVI_9007.mp4";
+import heroVideo from "/videos/hero_video.mp4";
 
 import "../styles/index.css";
+import "../styles/global.css";
 ---
 
 <Layout title="Brantebjerg">
@@ -17,10 +19,10 @@ import "../styles/index.css";
     <div class="hero-content">
       <h1>Brantebjerg</h1>
 
-      <p>Et kreativt kunstmiljø</p>
+      <p>A creative enviroment </p>
     </div>
   </section>
-
+  <Divider />
   <section class="about">
     <div class="about-grid">
       <div class="left-box">
