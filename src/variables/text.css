@@ -13,11 +13,11 @@
 
 :root {
   /* typefaces */
-  --h1-typeface: "alumni", sans-serif;
-  --h2-typeface: "chathura", sans-serif;
-  --h3-typeface: "chathura", sans-serif;
-  --h4-typeface: "chathura", sans-serif;
-  --p-typeface: "chenla", sans-serif;
+  --h1-typeface: "alumni";
+  --h2-typeface: "chathura";
+  --h3-typeface: "chathura";
+  --h4-typeface: "chathura";
+  --p-typeface: "chenla";
 
   /* font sizes */
   --h1-size: 64px;
