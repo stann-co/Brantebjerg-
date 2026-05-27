@@ -110,6 +110,10 @@
   margin-bottom: 20px;
 }
 
+.paper-box h1 {
+  color: #000;
+}
+
 .paper-box a {
   width: fit-content;
 
