@@ -181,3 +181,13 @@ body {
     height: auto;
   }
 }
+
+@media (max-width: 700px) {
+  .logo-text {
+    font-size: 1.6rem; /* mindre logo-tekst på mobil */
+  }
+
+  .brand-logo {
+    height: 48px; /* eventuelt gør logoet lidt mindre */
+  }
+}
