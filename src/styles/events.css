@@ -4,7 +4,7 @@
   position: relative;
   height: 340px;
 
-  background-image: url("/images/stemning.png");
+  background-image: url("/images/stemning2.png");
   background-size: cover;
   background-position: center;
 
@@ -33,18 +33,37 @@
 }
 
 .events-title h1 {
-  color: white;
+  color: rgb(255, 255, 255);
 
   font-size: 5rem;
   font-weight: 300;
   letter-spacing: 6px;
 }
 
+.opening-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+  color: #000;
+}
+.events-top h2 {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #000;
+}
 /* CONTENT */
 
 .opening-section,
 .events-section {
-  background-image: url("/images/storbg.webp");
+  background-image: url("/images/hvidb.webp");
   background-size: cover;
   background-position: center;
 }
@@ -175,11 +194,22 @@
   padding: 16px;
 }
 
+.event-card {
+  background: rgba(152, 165, 127, 0.85);
+
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .event-card img {
   width: 100%;
-  height: 340px;
+  height: 320px;
 
   object-fit: cover;
+  object-position: center;
 
   display: block;
 }

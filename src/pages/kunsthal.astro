@@ -14,7 +14,7 @@ import Divider from "../components/Divider.astro";
 
     <div class="hero-content">
       <h1>
-        Brantebjerg<br>
+        Brantebjerg<br />
         Kunsthal
       </h1>
 
@@ -26,15 +26,13 @@ import Divider from "../components/Divider.astro";
 
   <Divider />
 
-  <!-- ART -->
-
   <section class="page-section art-bg">
     <div class="section-grid">
       <div class="section-text">
         <h2>Art Collection</h2>
 
         <h3>
-          See the sprawling art exhibited in<br>
+          See the sprawling art exhibited in<br />
           Brantebjerg Kunsthal's raw architecture
         </h3>
 
@@ -66,10 +64,80 @@ import Divider from "../components/Divider.astro";
 
         <p>Enjoy local ingredients and seasonal produce.</p>
 
-        <a href="#"> Menu popup → </a>
+        <!-- MENU BUTTONS -->
+
+        <div class="menu-buttons">
+          <img id="foodBtn" class="menu-trigger" src="/images/menu3.png" alt="Food menu" />
+
+          <img id="drinkBtn" class="menu-trigger" src="/images/menu3.png" alt="Drink menu" />
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- FOOD POPUP -->
+
+  <div id="foodPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" data-close="foodPopup">&times;</span>
+
+      <img src="/images/menu1.webp" alt="Food menu" />
+    </div>
+  </div>
+
+  <!-- DRINK POPUP -->
+
+  <div id="drinkPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" data-close="drinkPopup">&times;</span>
+
+      <img src="/images/menu2.webp" alt="Drink menu" />
+    </div>
+  </div>
+
+  <script>
+    const foodBtn = document.getElementById("foodBtn");
+    const drinkBtn = document.getElementById("drinkBtn");
+
+    const foodPopup = document.getElementById("foodPopup");
+    const drinkPopup = document.getElementById("drinkPopup");
+
+    if (foodBtn && foodPopup) {
+      foodBtn.addEventListener("click", () => {
+        foodPopup.style.display = "flex";
+      });
+    }
+
+    if (drinkBtn && drinkPopup) {
+      drinkBtn.addEventListener("click", () => {
+        drinkPopup.style.display = "flex";
+      });
+    }
+
+    const closeButtons = document.querySelectorAll(".close");
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const popupId = button.getAttribute("data-close");
+
+        if (popupId) {
+          const popup = document.getElementById(popupId);
+
+          if (popup) {
+            popup.style.display = "none";
+          }
+        }
+      });
+    });
+
+    window.addEventListener("click", (e) => {
+      const target = e.target;
+
+      if (target instanceof HTMLElement && target.classList.contains("popup")) {
+        target.style.display = "none";
+      }
+    });
+  </script>
 
   <Divider />
 
@@ -92,5 +160,4 @@ import Divider from "../components/Divider.astro";
       </div>
     </div>
   </section>
-
 </Layout>

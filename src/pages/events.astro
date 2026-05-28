@@ -93,28 +93,26 @@ console.log(events);
 
     <div class="events-grid">
       {
-        events.map((event: { picture: string; title: string; date: string; location: string; description: string }) => (
+        events.map((event: any) => (
           <article class="event-card">
-            <img src={event.picture} alt={event.title} />
-
             <div class="event-info">
               <div class="event-left">
-                <span>{event.title}</span>
+                <span>{event.title || event.event_name || "Event navn"}</span>
 
-                <span>{event.date}</span>
+                <span>{event.date || event.time_date || event.datetime || "Tid og dato"}</span>
 
-                <span>{event.location}</span>
+                <span>{event.location || event.place || "Sted"}</span>
               </div>
 
               <div class="event-right">
-                <p>{event.description}</p>
+                <p>{event.description || event.desc || "Beskrivelse"}</p>
               </div>
             </div>
+
+            <img src={event.picture || event.image || event.image_url} alt={event.title || event.event_name} />
           </article>
         ))
       }
     </div>
-
-    <button class="expand-btn">Expand calendar</button>
   </section>
 </Layout>
