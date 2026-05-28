@@ -95,8 +95,6 @@ console.log(events);
       {
         events.map((event: any) => (
           <article class="event-card">
-            <img src={event.picture || event.image || event.image_url} alt={event.title || event.event_name} />
-
             <div class="event-info">
               <div class="event-left">
                 <span>{event.title || event.event_name || "Event navn"}</span>
@@ -110,11 +108,17 @@ console.log(events);
                 <p>{event.description || event.desc || "Beskrivelse"}</p>
               </div>
             </div>
+
+            <img src={event.picture || event.image || event.image_url} alt={event.title || event.event_name} />
           </article>
         ))
       }
     </div>
-
-    <button class="expand-btn">Expand calendar</button>
   </section>
+
+  <button class="expand-btn">Expand calendar</button>
 </Layout>
+
+))
+
+<button class="expand-btn">Expand calendar</button>
