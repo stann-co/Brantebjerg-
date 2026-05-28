@@ -1,80 +1,33 @@
-.kunsthal-hero {
-  height: 100vh;
-
+.hero-image {
   background: url("/images/hero-kunsthal.webp");
-
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  align-items: center;
-
-  position: relative;
-
-  padding-left: 8%;
-
-  color: white;
-
-  border-bottom: 15px solid #39475f;
 }
 
-.hero-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.15);
+.hero-content {
+  h1 {
+    line-height: 1.2;
+  }
 }
 
-.kunsthal-content {
-  position: relative;
-
-  z-index: 2;
-}
-
-.kunsthal-content h1 {
-  font-size: 6rem;
-
-  font-weight: 300;
-
-  letter-spacing: 6px;
-
-  line-height: 1.4;
-
-  margin-bottom: 20px;
-}
-
-.kunsthal-content p {
-  font-size: 1.2rem;
-}
-
-.kunsthal-section {
+.page-section {
   padding: 100px 8%;
-
-  border-top: 8px solid #39475f;
-
   background-size: cover;
-
   background-position: center;
-
   background-repeat: no-repeat;
+
+  &.art-bg {
+    background: url("/images/art1.png");
+  }
+  
+  &.food-bg {
+    background: url("/images/food2.png");
+    background-repeat: round;
+  }
+  
+  &.stay-bg {
+    background: url("/images/whitebag.webp");
+  }
 }
 
-.art-bg {
-  background: url("/images/art1.png");
-  border-bottom: 15px solid #39475f;
-}
-
-.food-bg {
-  background: url("/images/food2.png");
-  background-repeat: round;
-  border-bottom: 15px solid #39475f;
-}
-
-.stay-bg {
-  background: url("/images/whitebag.webp");
-  border-bottom: 15px solid #39475f;
-}
 
 .section-grid {
   display: grid;
@@ -87,19 +40,27 @@
 }
 
 .section-text h2 {
-  font-size: 3rem;
+  font-size: 64px;
 
   margin-bottom: 20px;
+
+  color: black;
 }
 
 .section-text h3 {
   margin-bottom: 20px;
+
+  color: black;
+
+  font-size: 60px;
 }
 
 .section-text p {
   line-height: 1.8;
 
   margin-bottom: 20px;
+
+  color: black;
 }
 
 .section-text a {

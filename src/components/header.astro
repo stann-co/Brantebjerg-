@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/footer.astro";
 import ImgButton from "./ImgButton.astro";
 
 const pathname = Astro.url.pathname;
@@ -28,28 +27,16 @@ const headerClass = pathname === "/" ? "index" :
 		align-items: center;
 		z-index: 100;
 
-		&.index {
+    &.index, &.events {
 			background-color: var(--card_color_index);
 		}
 
-		&.events {
-			background-color: var(--card_color_events);
-		}
-
-		&.bureau {
+		&.bureau, &.bureau-galleri {
 			background-color: var(--card_color_bureau);
 		}
-		
-		&.bureau-galleri {
-			background-color: var(--card_color_bureau-galleri);
-		}
 
-		&.kunsthal {
+		&.kunsthal, &.kunsthal-galleri {
 			background-color: var(--card_color_kunsthal);
-		}
-
-		&.kunsthal-galleri {
-			background-color: var(--card_color_kunsthal-galleri);
 		}
 	}
 

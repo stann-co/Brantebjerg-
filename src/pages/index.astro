@@ -10,44 +10,63 @@ import "../styles/global.css";
 
 <Layout title="Brantebjerg">
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
+    <video class="hero-image" autoplay muted loop playsinline>
       <source src={heroVideo} type="video/mp4" />
     </video>
 
-    <div class="hero-overlay"></div>
+    <!-- <div class="hero-overlay"></div> -->
 
     <div class="hero-content">
       <h1>Brantebjerg</h1>
+      <p class="hero-subtitle">A creative enviroment </p>
+      <p>
+        Brantebjerg has two locations:<br>
+        - Brantebjerg Kunsthal in norther Sjælland and<br>
+        - Brantebjerg Bureau in the heart of Copenhagen.<br>
+        See them both at the links above
+      </p>
 
-      <p>A creative enviroment </p>
+
     </div>
   </section>
   <Divider />
   <section class="about">
     <div class="about-grid">
-      <div class="left-box">
-        <h3>About us</h3>
 
-        <h2>
-          The people behind Brantebjerg -<br />
-        </h2>
+      <div>
+        <div class="text-box">
+          <h3>About us</h3>
 
-        <p>
-          Pawel inherited Brantebjerg Kunsthal from his parents; two polish refugees that wanted to share the art of their home. Originally a farm, Brantebjerg slowly progressed into an art exhibition. In 2018 Pawel and Pernelle (Pawels wife) took
-          over Brantebjerg Kunsthal and gave it a major overhaul. Combining art, food and good vibes into a grounded experience hidden in the northern zealand’s contry side, that is the Brantebjerg Kunsthal we have today. In january 2026 Pawel and
-          Pernelle opened Brantebjerg Bureau; an extension of Brantebjerg Kunsthal, but located in the heart of Copenhagen.
-        </p>
+          <h2>
+            The people<br>
+            behind<br>
+            Brantebjerg
+          </h2>
+
+          <p>
+            Pawel inherited Brantebjerg Kunsthal from his parents; two polish refugees that wanted to share the art  of their home. Originally a farm, Brantebjerg slowly progressed into an art exhibition.
+            <br><br>
+            In 2018 Pawel and Pernelle (Pawels wife) took over Brantebjerg Kunsthal and gave it a major overhaul. Combining art, food and good vibes into a grounded experience hidden in the northern zealand’s contry side, that is the Brantebjerg Kunsthal we have today.
+            <br><br>
+            In january 2026 Pawel and Pernelle opened Brantebjerg Bureau; an extension of Brantebjerg Kunsthal, but located in the heart of Copenhagen.
+          </p>
+        </div>
+
+        <div class="text-box quote">
+          <div class="quote-content">
+            <span class="quote-mark">“</span>
+            <p>In 1979 a couple of refugees arrived by foot to this place. They decided to open a gallery and present to the local environment a little piece of their homeland. They were my mom and dad.</p>
+            <span class="quote-mark">“</span>
+          </div>
+
+          <p><span>Pawel Dawid Wedrowski</span></p>
+        </div>
       </div>
 
       <div class="right-box">
         <img src={pawelImage.src} alt="Pawel og Pernille" />
-
-        <div class="quote">
-          <p>"In 1979 a couple of refugees arrived by foot to this place. They decided to open a gallery and present to the local environment a little piece of their homeland. They were my mom and dad. "</p>
-
-          <span> Pawel Dawid Wedrowski </span>
-        </div>
       </div>
+
     </div>
   </section>
 </Layout>

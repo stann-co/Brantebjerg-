@@ -16,17 +16,19 @@
 
   --h1-typeface: "alumni", sans-serif;
   --p-subtitle-typeface: "chathura", sans-serif;
-  --h2-typeface: "chathura", sans-serif;
+  --h2-typeface: "chenla", sans-serif;
   --h3-typeface: "chathura", sans-serif;
   --h4-typeface: "chathura", sans-serif;
   --p-typeface: "chenla", sans-serif;
+
+  font-family: var(--p-typeface);
 
   /* font sizes */
 
   --h1-size: 128px;
   --p-subtitle-size: 48px;
-  --h2-size: 48px;
-  --h3-size: 36px;
+  --h2-size: 64px;
+  --h3-size: 48px;
   --h4-size: 32px;
   --p-size: 18px;
 
@@ -44,22 +46,29 @@ h1 {
   color: var(--h1-color);
   font-weight: normal;
   line-height: 0.5;
-  letter-spacing: 10px;
+  letter-spacing: 12%;
 }
 
 h2 {
   font-family: var(--h2-typeface);
   font-size: var(--h2-size);
   color: var(--h2-color);
+  font-weight: normal;
+  letter-spacing: -1.1%;
+  line-height: 1.5;
 }
 
 h3 {
   font-family: var(--h3-typeface);
   font-size: var(--h3-size);
   color: var(--h3-color);
+  font-weight: normal;
+  margin-bottom: 0;
+  line-height: 0.6;
 }
 
 p {
   font-family: var(--p-typeface);
   font-size: var(--p-size);
+  font-weight: normal;
 }

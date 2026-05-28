@@ -1,14 +1,38 @@
 ---
 import facebookIcon from "/public/icons/facebook.svg";
 import instaIcon from "/public/icons/insta.svg";
+
+const pathname = Astro.url.pathname;
+
+//see the path to figure out the background color for the page
+const footerClass = pathname === "/" ? "index" :
+  pathname.startsWith("/bureau") ? "bureau" :
+	pathname.startsWith("/bureau-galleri") ? "bureau-galleri" :
+  pathname.startsWith("/kunsthal") ? "kunsthal" :
+	pathname.startsWith("/kunsthal-galleri") ? "kunsthal-galleri" :
+	pathname.startsWith("/events") ? "events" : "";
 ---
 
 <style>
-  .footer {
-    background: var(--secondary1-300, #39475f);
+  @import "../styles/global.css";
+	@import "../variables/colors.css";
+  @import "../variables/text.css";
 
-    padding: 35px 0 15px;
+  footer {
+    padding: 65px 0 15px;
     color: white;
+
+    &.index, &.events {
+			background-color: var(--footer_color_index);
+		}
+
+		&.bureau, &.bureau-galleri {
+			background-color: var(--footer_color_bureau);
+		}
+
+		&.kunsthal, &.kunsthal-galleri {
+			background-color: var(--footer_color_kunsthal);
+		}
   }
 
   .footer-wrapper {
@@ -19,7 +43,7 @@ import instaIcon from "/public/icons/insta.svg";
 
   .line {
     height: 2px;
-    background: rgba(255, 255, 255, 0.8);
+    background: white;
     margin-bottom: 45px;
   }
 
@@ -34,7 +58,10 @@ import instaIcon from "/public/icons/insta.svg";
 
   .hours-wrapper {
     display: flex;
-    gap: 100px;
+  }
+
+  .hours-column {
+    width: 50%;
   }
 
   .footer-title {
@@ -45,30 +72,32 @@ import instaIcon from "/public/icons/insta.svg";
   }
 
   .hours-title {
-    font-size: 1.1rem;
+    font-size: 20px;
     margin-bottom: 30px;
   }
 
   .hours-item {
     display: flex;
     gap: 18px;
-    font-size: 1.1rem;
+    font-size: 20px;
     margin-bottom: 6px;
-  }
+    line-height: 1.1;
 
-  .hours-item span:first-child {
-    width: 55px;
+    span:first-child {
+      width: 55px;
+    }
+
   }
 
   .contact {
     margin-top: 0;
   }
   .contact-grid {
+    font-size: 20px;
     display: grid;
     grid-template-columns: 180px auto;
 
-    margin-top: -20px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
 
   .socials {
@@ -104,42 +133,41 @@ import instaIcon from "/public/icons/insta.svg";
     display: flex;
     align-items: center;
     gap: 20px;
-  }
 
-  .news-form input {
-    width: 520px;
-    height: 72px;
-    padding: 0 35px;
+    input, button{
+      height: 72px;
 
-    border: none;
-    outline: none;
+      border: none;
+      outline: none;
+      border-radius: 50px;
 
-    border-radius: 50px;
+      font-size: 1.4rem;
 
-    background: var(--secondary1-100, #7082a0);
+      color: white;
 
-    color: white;
-    font-size: 1.4rem;
-  }
+      &.index, &.events {
+        background-color: var(--input_color_index);
+      }
 
-  .news-form input::placeholder {
-    color: white;
-  }
+      &.bureau, &.bureau-galleri {
+        background-color: var(--input_color_bureau);
+        color: var(--input_text_color_bureau);
+      }
 
-  .news-form button {
-    width: 165px;
-    height: 72px;
+      &.kunsthal, &.kunsthal-galleri {
+        background-color: var(--input_color_kunsthal);
+      }
+    }
 
-    border: none;
-    border-radius: 50px;
+    input {
+      width: 520px;
+      padding: 0 35px;
+    }
 
-    background: var(--secondary1-100, #7082a0);
-
-    color: white;
-
-    font-size: 1.3rem;
-
-    cursor: pointer;
+    button{
+      cursor: pointer;
+      width: 165px;
+    }
   }
 
   .copyright {
@@ -175,38 +203,38 @@ import instaIcon from "/public/icons/insta.svg";
   }
 </style>
 
-<footer class="footer">
+<footer class={footerClass}>
   <div class="footer-wrapper">
     <div class="line"></div>
 
     <div class="footer-top">
-      <div class="hours-wrapper">
-        <div>
-          <div class="footer-title">Opening hours</div>
+      <div>
+        <div class="footer-title">Opening hours</div>
+        <div class="hours-wrapper">
+          <div class="hours-column">
 
-          <div class="hours-title">Kunsthal:</div>
+            <div class="hours-title">Kunsthal:</div>
 
-          <div class="hours-item"><span>Mon:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Tue:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Wed:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Thu:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Fri:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Sat:</span><span>Closed</span></div>
-          <div class="hours-item"><span>Sun:</span><span>Closed</span></div>
-        </div>
+            <div class="hours-item"><span>Mon:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Tue:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Wed:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Thu:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Fri:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Sat:</span><span>Closed</span></div>
+            <div class="hours-item"><span>Sun:</span><span>Closed</span></div>
+          </div>
 
-        <div>
-          <div style="height:58px"></div>
+          <div class="hours-column">
+            <div class="hours-title">Bureau:</div>
 
-          <div class="hours-title">Bureau:</div>
-
-          <div class="hours-item"><span>Mon:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Tue:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Wed:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Thu:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Fri:</span><span>11-19</span></div>
-          <div class="hours-item"><span>Sat:</span><span>Closed</span></div>
-          <div class="hours-item"><span>Sun:</span><span>Closed</span></div>
+            <div class="hours-item"><span>Mon:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Tue:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Wed:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Thu:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Fri:</span><span>11-19</span></div>
+            <div class="hours-item"><span>Sat:</span><span>Closed</span></div>
+            <div class="hours-item"><span>Sun:</span><span>Closed</span></div>
+          </div>
         </div>
       </div>
 
@@ -246,9 +274,9 @@ import instaIcon from "/public/icons/insta.svg";
       </div>
 
       <div class="news-form">
-        <input type="email" placeholder="Your E-mail .." />
+        <input class={footerClass} type="email" placeholder="Your E-mail .." />
 
-        <button> Sign Up </button>
+        <button class={footerClass}> Sign Up </button>
       </div>
     </div>
 

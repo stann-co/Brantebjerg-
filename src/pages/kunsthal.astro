@@ -1,34 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import heroImage from "/public/images/hero-kunsthal.webp";
+import "../styles/global.css";
 import "../styles/kunsthal.css";
+
+import Divider from "../components/Divider.astro";
 ---
 
 <Layout title="Brantebjerg Kunsthal">
-  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-image"></div>
 
-  <section class="kunsthal-hero">
-    <div class="hero-overlay"></div>
-
-    <div class="kunsthal-content">
+    <div class="hero-content">
       <h1>
-        Brantebjerg <br />
+        Brantebjerg<br>
         Kunsthal
       </h1>
 
-      <p>Nakke Nord 65, 4500</p>
+      <p class="hero-subtitle">Nakke Nord 65, 4500</p>
     </div>
+
+    <!-- <div class="hero-overlay"></div> -->
+
   </section>
+
+  <Divider />
 
   <!-- ART -->
 
-  <section class="kunsthal-section art-bg">
+  <section class="page-section art-bg">
     <div class="section-grid">
       <div class="section-text">
         <h2>Art Collection</h2>
 
-        <p>See the sprawling art exhibited in Brantebjerg Kunsthals raw architecture</p>
+        <h3>
+          See the sprawling art exhibited in<br>
+          Brantebjerg Kunsthal's raw architecture
+        </h3>
 
         <a href="/kunsthal-galleri"> Kunsthal Gallery → </a>
       </div>
@@ -39,9 +47,11 @@ import "../styles/kunsthal.css";
     </div>
   </section>
 
+  <Divider />
+
   <!-- FOOD -->
 
-  <section class="kunsthal-section food-bg">
+  <section class="page-section food-bg">
     <div class="section-grid">
       <div>
         <img src="/images/food.webp" alt="" />
@@ -61,9 +71,11 @@ import "../styles/kunsthal.css";
     </div>
   </section>
 
+  <Divider />
+
   <!-- STAY -->
 
-  <section class="kunsthal-section stay-bg">
+  <section class="page-section stay-bg">
     <div class="section-grid">
       <div>
         <img src="/images/stay.webp" alt="" />
@@ -80,4 +92,5 @@ import "../styles/kunsthal.css";
       </div>
     </div>
   </section>
+
 </Layout>

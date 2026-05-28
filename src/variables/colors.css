@@ -80,12 +80,17 @@
 
   /* card colors */
   --card_color_index: #65754dbf;
-  --card_color_events: var(--card_color_index);
+  --footer_color_index: var(--secondary2-300);
+  --input_color_index: var(--secondary2-100);
 
   --card_color_bureau: #E9B08B80;
-  --card_color_bureau-galleri: var(--card_color_bureau);
+  --footer_color_bureau: var(--tertiary1-500);
+  --input_color_bureau: var(--tertiary1-200);
+  --input_text_color_bureau: var(--tertiary1-700);
   
   --card_color_kunsthal: #2B354880;
-  --card_color_kunsthal-galleri: var(--card_color_kunsthal);
+  --footer_color_kunsthal: var(--secondary1-300);
+  --input_color_kunsthal: var(--secondary1-100);
+
   
 }
