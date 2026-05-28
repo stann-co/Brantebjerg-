@@ -29,9 +29,28 @@
     display: block;
     margin: auto;
   }
-
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
 }
 
+.brand-logo {
+  height: 72px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-size: 5rem;
+  font-weight: 200;
+  letter-spacing: 0.18em;
+  color: white;
+  line-height: 1;
+  font-family: "Helvetica Neue", sans-serif;
+}
 .paper-box {
   background: url("/images/plaster.png");
   background-size: cover;
@@ -43,7 +62,7 @@
 
   p {
     line-height: 1.8;
-  
+
     margin-bottom: 20px;
   }
 

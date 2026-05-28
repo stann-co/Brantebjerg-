@@ -5,72 +5,87 @@ import Dropdown from "./Dropdown.astro";
 const pathname = Astro.url.pathname;
 
 //see the path to figure out the background color for the page
-const headerClass = pathname === "/" ? "index" :
-  pathname.startsWith("/bureau") ? "bureau" :
-	pathname.startsWith("/bureau-galleri") ? "bureau-galleri" :
-  pathname.startsWith("/kunsthal") ? "kunsthal" :
-	pathname.startsWith("/kunsthal-galleri") ? "kunsthal-galleri" :
-	pathname.startsWith("/events") ? "events" : "";
+const headerClass =
+  pathname === "/"
+    ? "index"
+    : pathname.startsWith("/bureau")
+      ? "bureau"
+      : pathname.startsWith("/bureau-galleri")
+        ? "bureau-galleri"
+        : pathname.startsWith("/kunsthal")
+          ? "kunsthal"
+          : pathname.startsWith("/kunsthal-galleri")
+            ? "kunsthal-galleri"
+            : pathname.startsWith("/events")
+              ? "events"
+              : "";
 ---
 
 <style>
-	@import "../styles/global.css";
-	@import "../variables/colors.css";
+  @import "../styles/global.css";
+  @import "../variables/colors.css";
 
-	header {
-		position: absolute;
-		top: 0;
+  header {
+    position: absolute;
+    top: 0;
 
-		width: 100%;
-		padding: 30px 20px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		z-index: 100;
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 
-    	&.index, &.events {
-			background-color: var(--card_color_index);
-		}
+    &.index,
+    &.events {
+      background-color: var(--card_color_index);
+    }
 
-		&.bureau, &.bureau-galleri {
-			background-color: var(--card_color_bureau);
-		}
+    &.bureau,
+    &.bureau-galleri {
+      background-color: var(--card_color_bureau);
+    }
 
-		&.kunsthal, &.kunsthal-galleri {
-			background-color: var(--card_color_kunsthal);
-		}
-	}
+    &.kunsthal,
+    &.kunsthal-galleri {
+      background-color: var(--card_color_kunsthal);
+    }
+  }
 
-	.nav {
-		display: flex;
-		align-items: center;
-		gap: 28px;
-	}
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
 
-	@media (max-width: 900px) {
-		header {
-  	  padding: 25px;
-	  }
-		.nav {
-			gap: 15px;
-		}
-	}
+  @media (max-width: 900px) {
+    header {
+      padding: 25px;
+    }
+    .nav {
+      gap: 15px;
+    }
+  }
 </style>
 
 <header class={headerClass}>
-	<ImgButton href="/" imgSrc="/icons/bb_logo.png" hoverSrc="/icons/bb_logo_h.png" alt="gå til forsiden" />
+  <a href="/" class="logo-wrapper">
+    <img src="/icons/bb_logo.png" alt="gå til forsiden" class="brand-logo" />
 
-	<div class="nav">		
-		<Dropdown href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn.png" hoverSrc="/icons/nav_kunsthal_btn_h.png" alt="gå til kunsthal brantebjerg" >
-			<ImgButton href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn_goto.png" hoverSrc="/icons/nav_kunsthal_btn_goto_h.png" alt="gå til kunsthal brantebjerg" />
-			<ImgButton href="/kunsthal-galleri" imgSrc="/icons/nav_kunsthal_btn_gallery.png" hoverSrc="/icons/nav_kunsthal_btn_gallery_h.png" alt="gå til kunsthal brantebjergs gallery" />
-		</Dropdown>
+    <span class="logo-text">Brantebjerg</span>
+  </a>
 
-		<Dropdown href="/bureau" imgSrc="/icons/nav_bureau_btn.png" hoverSrc="/icons/nav_bureau_btn_h.png" alt="go to bureau brantebjerg">
-			<ImgButton href="/bureau" imgSrc="/icons/nav_bureau_btn_goto.png" hoverSrc="/icons/nav_bureau_btn_goto_h.png" alt="go to bureau brantebjerg" />
-			<ImgButton href="/bureau-galleri" imgSrc="/icons/nav_bureau_btn_gallery.png" hoverSrc="/icons/nav_bureau_btn_gallery_h.png" alt="go to bureau brantebjergs gallery" />
-		</Dropdown>
-		
-		<ImgButton href="/events" imgSrc="/icons/nav_events_btn.png" hoverSrc="/icons/nav_events_btn_h.png" alt="gå til events" />
-	</div>
+  <div class="nav">
+    <Dropdown href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn.png" hoverSrc="/icons/nav_kunsthal_btn_h.png" alt="gå til kunsthal brantebjerg">
+      <ImgButton href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn_goto.png" hoverSrc="/icons/nav_kunsthal_btn_goto_h.png" alt="gå til kunsthal brantebjerg" />
+      <ImgButton href="/kunsthal-galleri" imgSrc="/icons/nav_kunsthal_btn_gallery.png" hoverSrc="/icons/nav_kunsthal_btn_gallery_h.png" alt="gå til kunsthal brantebjergs gallery" />
+    </Dropdown>
+
+    <Dropdown href="/bureau" imgSrc="/icons/nav_bureau_btn.png" hoverSrc="/icons/nav_bureau_btn_h.png" alt="go to bureau brantebjerg">
+      <ImgButton href="/bureau" imgSrc="/icons/nav_bureau_btn_goto.png" hoverSrc="/icons/nav_bureau_btn_goto_h.png" alt="go to bureau brantebjerg" />
+      <ImgButton href="/bureau-galleri" imgSrc="/icons/nav_bureau_btn_gallery.png" hoverSrc="/icons/nav_bureau_btn_gallery_h.png" alt="go to bureau brantebjergs gallery" />
+    </Dropdown>
+
+    <ImgButton href="/events" imgSrc="/icons/nav_events_btn.png" hoverSrc="/icons/nav_events_btn_h.png" alt="gå til events" />
+  </div>
 </header>
