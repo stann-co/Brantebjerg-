@@ -1,5 +1,6 @@
 ---
 import ImgButton from "./ImgButton.astro";
+import Dropdown from "./Dropdown.astro";
 
 const pathname = Astro.url.pathname;
 
@@ -27,7 +28,7 @@ const headerClass = pathname === "/" ? "index" :
 		align-items: center;
 		z-index: 100;
 
-    &.index, &.events {
+    	&.index, &.events {
 			background-color: var(--card_color_index);
 		}
 
@@ -60,9 +61,15 @@ const headerClass = pathname === "/" ? "index" :
 	<ImgButton href="/" imgSrc="/icons/bb_logo.png" hoverSrc="/icons/bb_logo_h.png" alt="gå til forsiden" />
 
 	<div class="nav">		
-		<ImgButton href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn.png" hoverSrc="/icons/nav_kunsthal_btn_h.png" alt="gå til kunsthal brantebjerg" />
+		<Dropdown href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn.png" hoverSrc="/icons/nav_kunsthal_btn_h.png" alt="gå til kunsthal brantebjerg" >
+			<ImgButton href="/kunsthal" imgSrc="/icons/nav_kunsthal_btn_goto.png" hoverSrc="/icons/nav_kunsthal_btn_goto_h.png" alt="gå til kunsthal brantebjerg" />
+			<ImgButton href="/kunsthal-galleri" imgSrc="/icons/nav_kunsthal_btn_gallery.png" hoverSrc="/icons/nav_kunsthal_btn_gallery_h.png" alt="gå til kunsthal brantebjergs gallery" />
+		</Dropdown>
 
-		<ImgButton href="/bureau" imgSrc="/icons/nav_bureau_btn.png" hoverSrc="/icons/nav_bureau_btn_h.png" alt="gå til bureau brantebjerg" />
+		<Dropdown href="/bureau" imgSrc="/icons/nav_bureau_btn.png" hoverSrc="/icons/nav_bureau_btn_h.png" alt="go to bureau brantebjerg">
+			<ImgButton href="/bureau" imgSrc="/icons/nav_bureau_btn_goto.png" hoverSrc="/icons/nav_bureau_btn_goto_h.png" alt="go to bureau brantebjerg" />
+			<ImgButton href="/bureau-galleri" imgSrc="/icons/nav_bureau_btn_gallery.png" hoverSrc="/icons/nav_bureau_btn_gallery_h.png" alt="go to bureau brantebjergs gallery" />
+		</Dropdown>
 		
 		<ImgButton href="/events" imgSrc="/icons/nav_events_btn.png" hoverSrc="/icons/nav_events_btn_h.png" alt="gå til events" />
 	</div>
