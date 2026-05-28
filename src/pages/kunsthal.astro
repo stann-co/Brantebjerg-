@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import "../styles/kunsthal.css";
 
+import ImgButton from "../components/ImgButton.astro";
 import Divider from "../components/Divider.astro";
 ---
 
@@ -20,8 +21,7 @@ import Divider from "../components/Divider.astro";
       <p class="hero-subtitle">Nakke Nord 65, 4500</p>
     </div>
 
-    <!-- <div class="hero-overlay"></div> -->
-
+    <div class="hero-overlay"></div>
   </section>
 
   <Divider />
@@ -38,11 +38,11 @@ import Divider from "../components/Divider.astro";
           Brantebjerg Kunsthal's raw architecture
         </h3>
 
-        <a href="/kunsthal-galleri"> Kunsthal Gallery → </a>
+        <ImgButton href="/kunsthal-galleri" imgSrc="/icons/kh_exploregallery_cta.png" hoverSrc="/icons/kh_exploregallery_cta_h.png" alt="Explore gallery" />
       </div>
 
       <div>
-        <img src="/images/gallery.webp" alt="" />
+        <img class="showcase-image" src="/images/gallery.webp" alt="" />
       </div>
     </div>
   </section>
@@ -54,7 +54,7 @@ import Divider from "../components/Divider.astro";
   <section class="page-section food-bg">
     <div class="section-grid">
       <div>
-        <img src="/images/food.webp" alt="" />
+        <img class="showcase-image" src="/images/food.webp" alt="" />
       </div>
 
       <div class="section-text">
@@ -78,7 +78,7 @@ import Divider from "../components/Divider.astro";
   <section class="page-section stay-bg">
     <div class="section-grid">
       <div>
-        <img src="/images/stay.webp" alt="" />
+        <img class="showcase-image" src="/images/stay.webp" alt="" />
       </div>
 
       <div class="section-text">

@@ -1,7 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import "../styles/global.css";
 import "../styles/kunst-galleri.css";
+
 import { getGallery } from "../api/supabase";
+
+import Divider from "../components/Divider.astro";
 
 const artworks = await getGallery();
 
@@ -11,13 +16,17 @@ const kunsthalArt = artworks.filter((item) => item.place && item.place.toLowerCa
 <Layout title="Galleri">
   <!-- HERO -->
 
-  <section class="gallery-hero">
-    <div class="hero-overlay"></div>
+  <section class="hero">
 
-    <div class="gallery-title">
+    <div class="hero-image"></div>
+
+    <div class="hero-content">
       <h1>Gallery</h1>
     </div>
+    <div class="hero-overlay"></div>
   </section>
+
+  <Divider />
 
   <!-- GALLERY -->
 

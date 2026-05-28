@@ -63,21 +63,7 @@
   color: black;
 }
 
-.section-text a {
-  display: inline-block;
-
-  padding: 12px 25px;
-
-  background: #2f3c57;
-
-  color: white;
-
-  text-decoration: none;
-
-  margin-top: 20px;
-}
-
-.section-grid img {
+.showcase-img {
   width: 100%;
 
   max-width: 850px;
