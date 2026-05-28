@@ -1,18 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import "../styles/global.css";
 import "../styles/bureau.css";
-
-import Divider from "../components/Divider.astro";
-import ImgButton from "../components/ImgButton.astro";
 ---
 
 <Layout title="Brantebjerg Bureau">
-  <section class="hero">
-    <div class="hero-image"></div>
+  <section class="bureau-hero">
+    <div class="hero-overlay"></div>
 
-    <div class="hero-content">
+    <div class="bureau-content">
       <h1>
         Brantebjerg <br />
         Bureau
@@ -20,21 +15,20 @@ import ImgButton from "../components/ImgButton.astro";
 
       <p>Tullinsgade 25, 1618</p>
     </div>
-
-    <!-- <div class="hero-overlay"></div> -->
   </section>
 
-  <Divider />
-
-  <section class="page-section">
+  <section class="bureau-section">
     <div class="bureau-grid">
       <div class="paper-box">
-        <h3>About Brantebjerg Bureau</h3>
+        <h1>About Brantebjerg Bureau</h1> STONG
+
         <p>In 2026 Pawel and Pernelle set out on a new adventure: introducing Brantebjerg Bureau!</p>
+
         <p>Brantebjerg Bureau is the little sister to Brantebjerg Kunsthal. It’s an art shop, but smaller and more intimate than Kunsthal, which gives it a more homely feel, perfect for evaluating if the art pieces would be suitable in your home.</p>
+
         <p>Brantebjerg Bureau is located on Tullinsgade on Vesterbro, making it a more convenient office for meetings with Pawel and Pernelle, if your planning an event with them.</p>
-        
-        <ImgButton href="/bureau-galleri" imgSrc="/icons/b_exploregallery_cta.png" hoverSrc="/icons/b_exploregallery_cta_h.png" alt="Explore gallery" />
+
+        <a href="/bureau-galleri"> Explore gallery → </a>
       </div>
 
       <div>
@@ -43,22 +37,20 @@ import ImgButton from "../components/ImgButton.astro";
     </div>
   </section>
 
-  <Divider />
-
-  <section class="page-section">
+  <section class="bureau-section">
     <div class="bureau-grid">
       <div>
         <img src="/images/stemning.webp" alt="" />
       </div>
 
       <div class="paper-box">
-        <h3>Events at Brantebjerg Bureau</h3>
+        <h1>Events at Brantebjerg Bureau</h1>
 
         <p>Besides art and meetings over coffee, Brantebjerg Bureau also offers a place to host events, such as plays and intimate concerts.</p>
 
         <p>If you have interest in hosting your next event at Brantebjerg Bureau, contact Pawel at: pwedrowski@yahoo.dk</p>
 
-        <ImgButton href="/events" imgSrc="/icons/b_seeevents_cta.png" hoverSrc="/icons/b_seeevents_cta_h.png" alt="Explore events" />
+        <a href="/events"> See events → </a>
       </div>
     </div>
   </section>

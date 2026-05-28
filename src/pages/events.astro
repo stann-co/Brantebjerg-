@@ -1,12 +1,120 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 import "../styles/events.css";
-import "../styles/global.css";
+
+import { getEvents } from "../api/supabase";
+
+const events = await getEvents();
+
+console.log(events);
 ---
 
 <Layout title="Events">
-	<section>
-		
-	</section>
+  <!-- HERO -->
+
+  <section class="events-hero">
+    <div class="hero-overlay"></div>
+
+    <div class="events-title">
+      <h1>Events</h1>
+    </div>
+  </section>
+
+  <!-- OPENING HOURS -->
+
+  <section class="opening-section">
+    <h2>Our Opening hours</h2>
+
+    <div class="opening-grid">
+      <!-- BUREAU -->
+
+      <div class="opening-card">
+        <div class="opening-top">
+          <div>
+            <p>Brantebjerg Bureau</p>
+
+            <span>Tullinsgade 25, 1618</span>
+          </div>
+
+          <div>
+            <p>Åbningstider:</p>
+          </div>
+        </div>
+
+        <div class="opening-times">
+          <span>Mandag: 11-19</span>
+          <span>Tirsdag: 11-19</span>
+          <span>Onsdag: 11-19</span>
+          <span>Torsdag: 11-19</span>
+          <span>Fredag: 11-19</span>
+          <span>Lørdag: 11-19</span>
+          <span>Søndag: 11-19</span>
+        </div>
+      </div>
+
+      <!-- KUNSTHAL -->
+
+      <div class="opening-card">
+        <div class="opening-top">
+          <div>
+            <p>Brantebjerg Kunsthal</p>
+
+            <span>Nakke Nord 65, 4500</span>
+          </div>
+
+          <div>
+            <p>Åbningstider:</p>
+          </div>
+        </div>
+
+        <div class="opening-times">
+          <span>Mandag: 11-19</span>
+          <span>Tirsdag: 11-19</span>
+          <span>Onsdag: 11-19</span>
+          <span>Torsdag: 11-19</span>
+          <span>Fredag: 11-19</span>
+          <span>Lørdag: 11-19</span>
+          <span>Søndag: 11-19</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+
+  <section class="events-section">
+    <div class="events-top">
+      <select>
+        <option>Filter</option>
+      </select>
+
+      <h2>Upcoming events</h2>
+    </div>
+
+    <div class="events-grid">
+      {
+        events.map((event: { picture: string; title: string; date: string; location: string; description: string }) => (
+          <article class="event-card">
+            <img src={event.picture} alt={event.title} />
+
+            <div class="event-info">
+              <div class="event-left">
+                <span>{event.title}</span>
+
+                <span>{event.date}</span>
+
+                <span>{event.location}</span>
+              </div>
+
+              <div class="event-right">
+                <p>{event.description}</p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <button class="expand-btn">Expand calendar</button>
+  </section>
 </Layout>
