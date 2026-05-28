@@ -17,17 +17,16 @@
   &.art-bg {
     background: url("/images/art1.png");
   }
-  
+
   &.food-bg {
     background: url("/images/food2.png");
     background-repeat: round;
   }
-  
+
   &.stay-bg {
     background: url("/images/whitebag.webp");
   }
 }
-
 
 .section-grid {
   display: grid;
@@ -98,5 +97,132 @@
 
   .kunsthal-content h1 {
     font-size: 4rem;
+  }
+}
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.menu-trigger {
+  width: 220px !important;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.menu-trigger:hover {
+  opacity: 0.9;
+
+  transform: scale(1.01);
+}
+
+/* POPUP */
+
+.popup {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.popup-content {
+  position: relative;
+
+  max-width: 80%;
+  max-height: 90vh;
+}
+
+.popup-content img {
+  width: 100%;
+
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.close {
+  position: absolute;
+
+  top: -18px;
+  right: -18px;
+
+  width: 38px;
+  height: 38px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  color: black;
+
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  margin-top: 55px;
+  margin-left: 10px;
+}
+
+/* MENU BILLEDER */
+
+.menu-trigger {
+  width: 100px;
+
+  max-width: 100%;
+
+  display: block;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.menu-trigger:hover {
+  opacity: 0.9;
+
+  transform: scale(1.02);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .menu-trigger {
+    width: 220px;
+  }
+
+  .menu-buttons {
+    margin-top: 30px;
+    margin-left: 0;
+    gap: 14px;
   }
 }
