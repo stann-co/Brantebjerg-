@@ -8,7 +8,13 @@ import { getGallery } from "../api/supabase";
 
 import Divider from "../components/Divider.astro";
 
-const artworks = await getGallery();
+type Artwork = {
+  artist: string;
+  picture: string;
+  place?: string;
+};
+
+const artworks: Artwork[] = await getGallery();
 
 const kunsthalArt = artworks.filter((item) => item.place && item.place.toLowerCase() === "brantebjerg kunsthal");
 ---

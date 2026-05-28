@@ -1,22 +1,24 @@
 ---
 const pathname = Astro.url.pathname;
 
-//see the path to figure out the background color for the page
+//Kigger på urlen, og tildeler en klasse
 const color = pathname === "/" ? "index" :
-  pathname.startsWith("/bureau") ? "bureau" :
+  	pathname.startsWith("/bureau") ? "bureau" :
 	pathname.startsWith("/bureau-galleri") ? "bureau-galleri" :
-  pathname.startsWith("/kunsthal") ? "kunsthal" :
+  	pathname.startsWith("/kunsthal") ? "kunsthal" :
 	pathname.startsWith("/kunsthal-galleri") ? "kunsthal-galleri" :
 	pathname.startsWith("/events") ? "events" : "";
 ---
 
 <style>
 	div{
-
 		height: 12px;
 		display: block;
 
-    &.index, &.events {
+		/* hvis den klasse der blev tildelt matcher,
+		bliver baggrundsfarven sat tilsvarende */
+
+		&.index, &.events {
 			background-color: var(--footer_color_index);
 		}
 
@@ -28,9 +30,7 @@ const color = pathname === "/" ? "index" :
 			background-color: var(--footer_color_kunsthal);
 		}
 	}
-
 </style>
 
 <div class={color}>
-
 </div>
