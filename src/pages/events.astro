@@ -1,13 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 import "../styles/events.css";
 
 import { getEvents } from "../api/supabase";
 
+import Divider from "../components/Divider.astro";
+
 const events = await getEvents();
 
-console.log(events);
 ---
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const filterSelect = document.querySelector('.filter') as HTMLSelectElement;
+    const sortSelect = document.querySelector('.sort') as HTMLSelectElement;
+    const eventsGrid = document.querySelector('.events-grid');
+    const eventCards = Array.from(document.querySelectorAll('.event-card')) as HTMLElement[];
+
+    function filterEvents() {
+      const selectedPlace = filterSelect?.value.toLowerCase() || 'all';
+
+      eventCards.forEach((card) => {
+        const place = (card.getAttribute('data-place') || '').toLowerCase().trim();
+        (card as HTMLElement).style.display =
+          selectedPlace === 'all' || selectedPlace === place ? 'block' : 'none';
+      });
+    }
+
+    function sortEvents() {
+      if (!eventsGrid || !sortSelect) return;
+
+      const order = sortSelect.value;
+      const sorted = eventCards.slice().sort((a, b) => {
+        const aDate = new Date(a.dataset.date || '').getTime();
+        const bDate = new Date(b.dataset.date || '').getTime();
+
+        if (Number.isNaN(aDate) || Number.isNaN(bDate)) return 0;
+        return order === 'Descending' ? bDate - aDate : aDate - bDate;
+      });
+
+      sorted.forEach((card) => eventsGrid.appendChild(card));
+    }
+
+    filterSelect?.addEventListener('change', () => {
+      filterEvents();
+      sortEvents();
+    });
+
+    sortSelect?.addEventListener('change', () => {
+      sortEvents();
+    });
+
+    filterEvents();
+    sortEvents();
+  });
+</script>
 
 <Layout title="Events">
   <!-- HERO -->
@@ -19,6 +67,8 @@ console.log(events);
       <h1>Events</h1>
     </div>
   </section>
+
+  <Divider />
 
   <!-- OPENING HOURS -->
 
@@ -84,8 +134,15 @@ console.log(events);
 
   <section class="events-section">
     <div class="events-top">
-      <select>
-        <option>Filter</option>
+      <select class="filter">
+        <option>All</option>
+        <option>Brantebjerg Bureau</option>
+        <option>Brantebjerg Kunsthal</option>
+      </select>
+
+      <select class="sort">
+        <option>Ascending</option>
+        <option>Descending</option>
       </select>
 
       <h2>Upcoming events</h2>
@@ -94,22 +151,22 @@ console.log(events);
     <div class="events-grid">
       {
         events.map((event: any) => (
-          <article class="event-card">
+          <article class="event-card" data-place={event.place?.toLowerCase().trim()} data-date={event.date || ''}>
             <div class="event-info">
               <div class="event-left">
-                <span>{event.title || event.event_name || "Event navn"}</span>
+                <span>{event.name}</span>
 
-                <span>{event.date || event.time_date || event.datetime || "Tid og dato"}</span>
+                <span>{event.date}</span>
 
-                <span>{event.location || event.place || "Sted"}</span>
+                <span>{event.place}</span>
               </div>
 
               <div class="event-right">
-                <p>{event.description || event.desc || "Beskrivelse"}</p>
+                <p>{event.description}</p>
               </div>
             </div>
 
-            <img src={event.picture || event.image || event.image_url} alt={event.title || event.event_name} />
+            <img src={event.picture} alt={event.name} />
           </article>
         ))
       }

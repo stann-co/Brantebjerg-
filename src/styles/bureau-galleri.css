@@ -27,7 +27,7 @@
 
   text-align: center;
 
-  background: #31405f;
+  background: var(--footer_color_bureau);
 
   width: 620px;
   height: 135px;
@@ -88,7 +88,7 @@
 
   padding: 0 15px;
 
-  background: #6d2330;
+  background: var(--footer_color_bureau);
 
   border: none;
 
@@ -125,7 +125,7 @@
   bottom: 12px;
   left: 12px;
 
-  background: #d3a185;
+  background: var(--footer_color_bureau);
 
   padding: 6px 14px;
 
@@ -134,6 +134,10 @@
   color: white;
 
   letter-spacing: 1px;
+}
+
+.sort {
+  background: var(--footer_color_bureau);
 }
 
 /* MOBILE */

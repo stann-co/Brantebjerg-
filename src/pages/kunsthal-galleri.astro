@@ -12,12 +12,40 @@ type Artwork = {
   artist: string;
   picture: string;
   place?: string;
+  year?: string;
 };
 
 const artworks: Artwork[] = await getGallery();
 
 const kunsthalArt = artworks.filter((item) => item.place && item.place.toLowerCase() === "brantebjerg kunsthal");
 ---
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const sortSelect = document.querySelector('.sort') as HTMLSelectElement;
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const galleryCards = Array.from(document.querySelectorAll('.art-card')) as HTMLElement[];
+
+    function sortgallerys() {
+      const order = sortSelect.value;
+      const sorted = galleryCards.slice().sort((a, b) => {
+        const aDate = new Date(a.dataset.date || '').getTime();
+        const bDate = new Date(b.dataset.date || '').getTime();
+
+        if (Number.isNaN(aDate) || Number.isNaN(bDate)) return 0;
+        return order === 'Descending' ? bDate - aDate : aDate - bDate;
+      });
+
+      sorted.forEach((card) => galleryGrid?.appendChild(card));
+    }
+
+    sortSelect?.addEventListener('change', () => {
+      sortgallerys();
+    });
+
+    sortgallerys();
+  });
+</script>
 
 <Layout title="Galleri">
   <!-- HERO -->
@@ -37,21 +65,16 @@ const kunsthalArt = artworks.filter((item) => item.place && item.place.toLowerCa
 
   <section class="gallery-container">
     <div class="gallery-top">
-      <select class="gallery-filter">
-        <option>Filter</option>
-
-        <option>Maleri</option>
-
-        <option>Foto</option>
-
-        <option>Skulptur</option>
+      <select class="sort">
+        <option>Ascending</option>
+        <option>Descending</option>
       </select>
     </div>
 
     <div class="gallery-grid">
       {
         kunsthalArt.map((art) => (
-          <article class="art-card">
+          <article class="art-card" data-date={art.year}>
             <img src={art.picture} alt={art.artist} />
 
             <div class="art-label">{art.artist}</div>

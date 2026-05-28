@@ -87,6 +87,10 @@
   font-size: 1rem;
 }
 
+.sort {
+  background: var(--footer_color_kunsthal);
+}
+
 .gallery-grid {
   display: grid;
 

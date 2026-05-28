@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 import "../styles/bureau-galleri.css";
 import { getGallery } from "../api/supabase";
 
@@ -7,12 +8,42 @@ type Artwork = {
   artist: string;
   picture: string;
   place?: string;
+  year?: string;
 };
 
 const artworks: Artwork[] = await getGallery();
 
+/* Finder kun kunst fra bureauet */
 const bureauArt = artworks.filter((art) => art.place?.toLowerCase() === "brantebjerg bureau");
 ---
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const sortSelect = document.querySelector('.sort') as HTMLSelectElement;
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const galleryCards = Array.from(document.querySelectorAll('.gallery-card')) as HTMLElement[];
+
+    function sortgallerys() {
+      const order = sortSelect.value;
+      const sorted = galleryCards.slice().sort((a, b) => {
+        const aDate = new Date(a.dataset.date || '').getTime();
+        const bDate = new Date(b.dataset.date || '').getTime();
+
+        if (Number.isNaN(aDate) || Number.isNaN(bDate)) return 0;
+        return order === 'Descending' ? bDate - aDate : aDate - bDate;
+      });
+
+      sorted.forEach((card) => galleryGrid?.appendChild(card));
+    }
+
+    sortSelect?.addEventListener('change', () => {
+      console.log('Sorting gallerys...');
+      sortgallerys();
+    });
+
+    sortgallerys();
+  });
+</script>
 
 <Layout title="Galleri b">
   <section class="gallery-hero">
@@ -28,18 +59,16 @@ const bureauArt = artworks.filter((art) => art.place?.toLowerCase() === "branteb
 
   <section class="gallery-wrapper">
     <div class="gallery-top">
-      <select class="gallery-filter">
-        <option>Filter</option>
-        <option>Maleri</option>
-        <option>Foto</option>
-        <option>Skulptur</option>
+      <select class="sort">
+        <option>Ascending</option>
+        <option>Descending</option>
       </select>
     </div>
 
     <div class="gallery-grid">
       {
         bureauArt.map((art) => (
-          <article class="gallery-card">
+          <article class="gallery-card" data-date={art.year}>
             <img src={art.picture} alt={art.artist} />
 
             <div class="artist">{art.artist}</div>

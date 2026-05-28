@@ -74,26 +74,20 @@ body {
   background-repeat: no-repeat;
 }
 
-.booking-btn {
-  padding: 18px 40px;
+.filter, .sort {
+  height: 38px;
 
-  border: 1px solid white;
+  border: none;
+
+  background: #355241;
 
   color: white;
 
-  text-decoration: none;
+  padding: 0 12px;
 
-  font-family: var(--p-typeface);
-
-  letter-spacing: 4px;
-
-  transition: 0.3s;
+  margin-right: 20px;
 }
 
-.booking-btn:hover {
-  background: white;
-  color: black;
-}
 
 /* MOBILE */
 
@@ -147,11 +141,6 @@ body {
   line-height: 1;
   font-family: var(--h1-typeface);
   text-transform: none;
-}
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
 }
 
 @media (max-width: 900px) {
