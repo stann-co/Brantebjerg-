@@ -31,6 +31,19 @@
 
   z-index: 2;
 }
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  font-family: sans-serif;
+}
 
 .events-title h1 {
   color: rgb(255, 255, 255);
@@ -63,7 +76,7 @@
 
 .opening-section,
 .events-section {
-  background-image: url("/images/hvidb.webp");
+  background-image: url("/images/kann.png");
   background-size: cover;
   background-position: center;
 }
