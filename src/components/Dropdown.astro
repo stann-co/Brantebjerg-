@@ -1,0 +1,38 @@
+---
+import ImgButton from './ImgButton.astro';
+
+const {
+  imgSrc = '/default-button.png',
+  hoverSrc = '/hover-button.png',
+  alt = 'Button'
+} = Astro.props;
+
+//add ImgButton elements inside the dropdown to populate it
+---
+
+<style>
+	@import "../styles/global.css";
+	@import "../variables/colors.css";
+
+	.dropdown {
+		position: relative;
+	}
+</style>
+
+<style is:global> /* Den her styling er global, så den kan affekte de elementer der kommer ind i slot'et */
+	.dropdown-content {
+		display: none;
+		position: absolute;
+	}
+
+	.dropdown:focus-within .dropdown-content {
+		display: block;
+	}
+</style>
+
+<div class="dropdown">
+	<ImgButton class="dropdown-button" imgSrc={imgSrc} hoverSrc={hoverSrc} alt={alt} />
+	<div class="dropdown-content">
+		<slot />
+	</div>
+</div>
